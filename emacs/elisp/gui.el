@@ -13,3 +13,6 @@
 
 ;;font
 (add-to-list 'default-frame-alist '(font . "Inconsolata-9.8" ))
+
+;;theme
+(require 'ir-black-theme)

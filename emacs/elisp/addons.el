@@ -13,6 +13,28 @@
 ;; working LaTeX installation with the preview package.
 ;; Also consider running (customize-group 'sage) to see more options.
 
+;; add package repos
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
+
+
+;; install packages
+(package-install 'ace-jump-mode)
+(package-install 'auctex)
+(package-install 'auto-compile)
+(package-install 'auto-complete)
+(package-install 'magit)
+(package-install 'helm)
+(package-install 'ir-black-theme)
+(package-install 'paredit)
+(package-install 'slime)
+(package-install 'xkcd)
+(package-install  'smart-mode-line)
+(package-install 'undo-tree)
+
+
 (require 'smart-mode-line)
 (sml/setup)
 
@@ -22,11 +44,6 @@
 ;; helm
 (require 'helm-mode)
 (helm-mode 1)
-;; add package repos
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
 
 ;; makes tramp work with zsh
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
