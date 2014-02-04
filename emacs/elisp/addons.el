@@ -19,7 +19,6 @@
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-
 ;; install packages
 (package-install 'ace-jump-mode)
 (package-install 'auctex)

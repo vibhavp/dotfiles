@@ -9,3 +9,4 @@
 (load-config-file "lisp")
 (load-config-file "skeleton")
 (load-config-file "variables")
+(load-config-file "emms")

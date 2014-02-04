@@ -12,7 +12,7 @@
 (global-linum-mode)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-9.8" ))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-9" ))
 
 ;;theme
 (require 'ir-black-theme)
