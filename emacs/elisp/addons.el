@@ -33,7 +33,7 @@
 (package-install  'smart-mode-line)
 (package-install 'undo-tree)
 
-
+(setq sml/theme 'light)
 (require 'smart-mode-line)
 (sml/setup)
 
