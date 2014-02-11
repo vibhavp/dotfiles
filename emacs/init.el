@@ -1,5 +1,5 @@
 (package-initialize)
-(add-to-list 'load-path "/home/vibhavp/dotfiles/emacs/elisp")
+(add-to-list 'load-path "~/.emacs.d/elisp/")
 
 (require 'config-addons)
 (require 'config-c)
