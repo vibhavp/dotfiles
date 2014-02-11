@@ -17,3 +17,5 @@
 (package-install 'ido-at-point)
 (package-install 'smex)
 (package-install 'nlinum)
+
+(save-buffers-kill-terminal)
