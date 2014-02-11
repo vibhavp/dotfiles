@@ -9,7 +9,7 @@
 (column-number-mode)
 
 ;;linum mode
-(global-linum-mode)
+(global-nlinum-mode)
 
 ;; show time on modeline
 (display-time-mode)

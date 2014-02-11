@@ -19,19 +19,8 @@
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-;; install packages
-(package-install 'ace-jump-mode)
-(package-install 'auctex)
-(package-install 'auto-compile)
-(package-install 'auto-complete)
-(package-install 'magit)
-(package-install 'ir-black-theme)
-(package-install 'paredit)
-(package-install 'slime)
-(package-install 'xkcd)
-(package-install  'smart-mode-line)
-(package-install 'undo-tree)
 
+;; smart-mode line
 (setq sml/theme 'light)
 (require 'smart-mode-line)
 (sml/setup)

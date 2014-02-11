@@ -1,9 +1,4 @@
 ;; ido and friends
-;; install necessary packages
-
-(package-install 'ido-ubiquitous)
-(package-install 'ido-at-point)
-
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
