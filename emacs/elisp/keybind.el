@@ -11,5 +11,18 @@
 (global-set-key (kbd "s-<down>") 'enlarge-window)
 (global-set-key (kbd "C-x u") 'undo-tree-visualize)
 (global-set-key (kbd "C-x M-e") 'eval-and-replace)
+(global-set-key (kbd "C-c <right>") '(lambda ()
+				       (interactive)
+				       (kill-region-to-window 'right)))
+(global-set-key (kbd "C-c <left>") '(lambda ()
+				      (interactive)
+				      (kill-region-to-window 'left)))
+(global-set-key (kbd "C-c <up>") '(lambda ()
+				    (interactive)
+				    (kill-region-to-window 'up)))
+
+(global-set-key (kbd "C-c <down>") '(lambda ()
+				      (interactive)
+				      (kill-region-to-window 'down)))
 ;;enable windmove bindings
 (windmove-default-keybindings)

@@ -27,3 +27,18 @@
     (goto-char start)
     (yank)
     (insert "\n")))
+
+(defun kill-region-to-window (window)
+  "Move region to the window '(left|right|up|down) to the current window"
+  (kill-region (region-beginning) (region-end))
+  (condition-case nil
+      (cond
+       ((eq window 'up)
+	(windmove-up))
+       ((eq window 'down)
+	(windmove-down))
+       ((eq window 'left)
+	(windmove-left))
+       (t (windmove-right)))
+    (error (insert (current-kill 1))))
+  (insert (current-kill 1)))

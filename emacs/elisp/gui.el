@@ -11,8 +11,13 @@
 ;;linum mode
 (global-linum-mode)
 
+;; show time on modeline
+(display-time-mode)
+
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-9" ))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-8" ))
+;; Why not?
+;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
 ;;theme
 (require 'ir-black-theme)

@@ -13,9 +13,9 @@
 
 ;;Enable auto-complete
 ;;(add-to-list 'load-path "/home/vibhavp/.emacs.d/auto-complete")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "/home/vibhavp/.emacs.d/auto-complete/ac-dict")
-(ac-config-default)
+;;(require 'auto-complete-config)
+;;(add-to-list 'ac-dictionary-directories "/home/vibhavp/.emacs.d/auto-complete/ac-dict")
+;;(ac-config-default)
 
 ;;load SLIME
 ;;(load (expand-file-name "~/quicklisp/slime-helper.el"))

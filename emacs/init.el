@@ -10,3 +10,4 @@
 (load-config-file "skeleton")
 (load-config-file "variables")
 (load-config-file "emms")
+(load-config-file "ido")

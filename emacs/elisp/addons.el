@@ -25,7 +25,6 @@
 (package-install 'auto-compile)
 (package-install 'auto-complete)
 (package-install 'magit)
-(package-install 'helm)
 (package-install 'ir-black-theme)
 (package-install 'paredit)
 (package-install 'slime)
@@ -39,10 +38,6 @@
 
 (require 'erc)
 (add-to-list 'erc-modules 'notifications)
-
-;; helm
-(require 'helm-mode)
-(helm-mode 1)
 
 ;; makes tramp work with zsh
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
