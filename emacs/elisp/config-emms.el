@@ -21,3 +21,4 @@
       emms-player-list '(emms-player-mpg321 
 			 emms-player-mplayer 
 			 emms-player-mplayer-playlist))
+(provide 'config-emms)

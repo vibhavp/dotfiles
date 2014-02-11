@@ -26,3 +26,5 @@
 				      (kill-region-to-window 'down)))
 ;;enable windmove bindings
 (windmove-default-keybindings)
+
+(provide 'config-keybind)

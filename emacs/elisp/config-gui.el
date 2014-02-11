@@ -8,7 +8,7 @@
 ;; enable column-number-mode
 (column-number-mode)
 
-;;linum mode
+;; nlinum mode
 (global-nlinum-mode)
 
 ;; show time on modeline
@@ -21,3 +21,5 @@
 
 ;;theme
 (require 'ir-black-theme)
+
+(provide 'config-gui)

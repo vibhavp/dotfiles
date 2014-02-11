@@ -45,3 +45,5 @@
     (let ((start (point)))
       (insert text)
       (goto-char start))))
+
+(provide 'config-functions)

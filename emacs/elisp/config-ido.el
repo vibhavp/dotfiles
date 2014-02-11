@@ -24,3 +24,5 @@
 (setq ibuffer-expert t)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(provide 'config-ido)

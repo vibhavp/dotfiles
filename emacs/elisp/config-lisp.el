@@ -25,3 +25,5 @@
 ;; auto compile on save
 (require 'auto-compile)
 (auto-compile-on-save-mode)
+
+(provide 'config-lisp)

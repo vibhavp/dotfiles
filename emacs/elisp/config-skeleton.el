@@ -20,3 +20,5 @@
   "\n"
   "return 0;"
   "}")
+
+(provide 'config-skeleton)

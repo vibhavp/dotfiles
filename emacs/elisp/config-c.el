@@ -23,3 +23,5 @@
 
 ;; electric-pair-mode
 (electric-pair-mode)
+
+(provide 'config-c)
