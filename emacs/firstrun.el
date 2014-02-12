@@ -18,5 +18,7 @@
 (package-install 'ido-at-point)
 (package-install 'smex)
 (package-install 'nlinum)
+(package-install 'gist)
+(package-install 'iedit)
 
 (save-buffers-kill-terminal)
