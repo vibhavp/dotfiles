@@ -4,6 +4,7 @@
 (package-initialize)
 (package-refresh-contents)
 
+(messages "Installing Packages")
 (package-install 'ace-jump-mode)
 (package-install 'auctex)
 (package-install 'auto-compile)
