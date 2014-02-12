@@ -13,7 +13,7 @@
 (package-install 'paredit)
 (package-install 'slime)
 (package-install 'xkcd)
-(package-install  'smart-mode-line)
+(package-install 'smart-mode-line)
 (package-install 'ido-ubiquitous)
 (package-install 'ido-at-point)
 (package-install 'smex)
