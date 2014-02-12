@@ -17,4 +17,4 @@ vibhavp's emacs config
 * nlinum
 * gist
 * iedit
-
+* multiple-cursors

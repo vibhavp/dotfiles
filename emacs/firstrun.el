@@ -20,5 +20,6 @@
 (package-install 'nlinum)
 (package-install 'gist)
 (package-install 'iedit)
+(package-install 'multiple-cursors)
 
 (save-buffers-kill-terminal)
