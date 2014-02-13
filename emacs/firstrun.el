@@ -4,7 +4,7 @@
 (package-initialize)
 (package-refresh-contents)
 
-(messages "Installing Packages")
+(message "Installing Packages")
 (package-install 'ace-jump-mode)
 (package-install 'auctex)
 (package-install 'auto-compile)
@@ -14,6 +14,8 @@
 (package-install 'slime)
 (package-install 'xkcd)
 (package-install 'smart-mode-line)
+(package-install 'latex-pretty-symbols)
+(package-install 'undo-tree)
 (package-install 'ido-ubiquitous)
 (package-install 'ido-at-point)
 (package-install 'smex)
