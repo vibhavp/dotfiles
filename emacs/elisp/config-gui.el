@@ -20,7 +20,7 @@
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
 ;;theme
-(require 'ir-black-theme)
+(load-theme 'clues t)
 
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)

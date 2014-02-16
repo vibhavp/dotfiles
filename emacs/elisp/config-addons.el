@@ -13,13 +13,6 @@
 ;; working LaTeX installation with the preview package.
 ;; Also consider running (customize-group 'sage) to see more options.
 
-;; add package repos
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
-
-
 ;; smart-mode line
 (setq sml/theme 'light)
 (require 'smart-mode-line)
