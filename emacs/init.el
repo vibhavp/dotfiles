@@ -12,3 +12,5 @@
 (require 'config-variables)
 (require 'config-emms)
 (require 'config-ido)
+(require 'config-eshel)
+(require 'config-dired)

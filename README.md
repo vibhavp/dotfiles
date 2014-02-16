@@ -10,4 +10,3 @@ git clone https://github.com/vibhavp/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 sh -ex firstrun.sh
 ```
-

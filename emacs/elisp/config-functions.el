@@ -28,10 +28,12 @@
     (yank)
     (insert "\n")))
 
-(defun kill-region-to-window (window)
-  "Move region to the window '(left|right|up|down) to the current window"
+(defun kill-region-to-window (window &optional keep-text)
+  "Move region to the WINDOW '(left|right|up|down) to the current window.
+If KEEP-TEXT is t, dont delete the selcted region"
   (let ((text (buffer-substring-no-properties (region-beginning) (region-end))))
-    (delete-region (region-beginning) (region-end))
+    (unless keep-text
+      (delete-region (region-beginning) (region-end)))
     (condition-case nil
 	(cond
 	 ((eq window 'up)
