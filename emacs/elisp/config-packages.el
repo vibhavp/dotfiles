@@ -24,5 +24,8 @@
 (package-install 'multiple-cursors)
 (package-install 'clues-theme)
 (package-install 'ix)
+(package-install 'dired-details+)
+(package-install 'emms)
+(package-install 'god-mode)
 
 (provide 'config-packages)

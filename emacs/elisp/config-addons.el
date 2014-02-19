@@ -38,4 +38,8 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 ;;(require 'xkcd)
 
+;;enbe god-mode
+(require 'god-mode)
+(global-set-key (kbd "<escape>") 'god-mode-all)
+
 (provide 'config-addons)
