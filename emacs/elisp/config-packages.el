@@ -27,5 +27,6 @@
 (package-install 'dired-details+)
 (package-install 'emms)
 (package-install 'god-mode)
+(package-install 'flx-ido)
 
 (provide 'config-packages)
