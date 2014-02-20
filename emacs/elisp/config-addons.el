@@ -20,8 +20,9 @@
 
 (require 'erc)
 (add-to-list 'erc-modules 'notifications)
+(erc-truncate-mode 1)
+(setq erc-interpret-mirc-colort)
 
-;; makes tramp work with zsh
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
 ;; enable recentf
