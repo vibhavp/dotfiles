@@ -15,3 +15,4 @@
 (require 'config-ido)
 (require 'config-eshell)
 (require 'config-dired)
+(require 'config-ispell)
