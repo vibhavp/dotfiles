@@ -28,5 +28,6 @@
 (package-install 'emms)
 (package-install 'god-mode)
 (package-install 'flx-ido)
+(package-install 'scheme-complete)
 
 (provide 'config-packages)
