@@ -1,4 +1,3 @@
-(require 'eshell)
-(setenv "CC" "ccache gcc")
+(eval-after-load 'eshell '(setenv "CC" "ccache gcc"))
 
 (provide 'config-eshell)
