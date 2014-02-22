@@ -26,4 +26,14 @@
 (require 'auto-compile)
 (auto-compile-on-save-mode)
 
+(autoload 'scheme-smart-complete "scheme-complete" nil t)
+(autoload 'scheme-get-current-symbol-info "scheme-complete" nil t)
+
+(eval-after-load 'scheme
+  '(define-key scheme-mode-map (kbd "C-M-i") 'scheme-complete-or-indent))
+(add-hook 'scheme-mode-hook
+  (lambda ()
+    (make-local-variable 'eldoc-documentation-function)
+    (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
+    (eldoc-mode)))
 (provide 'config-lisp)
