@@ -13,34 +13,33 @@
 ;; working LaTeX installation with the preview package.
 ;; Also consider running (customize-group 'sage) to see more options.
 
+(defvar config-recentf-mode-enabled nil)
 ;; smart-mode line
 (setq sml/theme 'light)
-(require 'smart-mode-line)
 (sml/setup)
 
-(require 'erc)
-(add-to-list 'erc-modules 'notifications)
+;;Enable notifications, truncate-mode and make ERC interpret
+;;mIRC colour coding
+;;(require 'erc)
+;;(add-to-list 'erc-modules 'notifications)
 (erc-truncate-mode 1)
-(setq erc-interpret-mirc-colort)
+(erc-spelling-mode 1)
+(setq erc-interpret-mirc-color t)
 
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
 ;; enable recentf
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+(defun config-recentf-mode-enable ()
+  (unless config-recentf-mode-enabled
+    (recentf-mode 1)
+    (setq recentf-max-menu-items 25)
+    (setq config-recentf-mode-enabled t)))
 
+(global-set-key (kbd "C-x C-r") '(lambda ()
+				   (interactive)
+				   (config-recentf-mode-enable)
+				   (recentf-open-files)))
 ;;undo tree
-(global-undo-tree-mode t)
-
-;;
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-;;(require 'xkcd)
-
-;;enbe god-mode
-(require 'god-mode)
-(global-set-key (kbd "<escape>") 'god-mode-all)
+(global-undo-tree-mode 1)
 
 (provide 'config-addons)
