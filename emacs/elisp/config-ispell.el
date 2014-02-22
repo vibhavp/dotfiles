@@ -5,7 +5,5 @@
 (setq ispell-current-dictionary "~/usr/share/hunspell/en-GB"
       ispell-program-name "ispell" ;; I 
       flyspell-issue-message-flag nil)
-;;make erc work with flyspell 
-(erc-spelling-mode 1)
 
 (provide 'config-ispell)
