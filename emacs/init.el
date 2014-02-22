@@ -11,7 +11,6 @@
 (require 'config-lisp)
 (require 'config-skeleton)
 (require 'config-variables)
-(require 'config-emms)
 (require 'config-ido)
 (require 'config-eshell)
 (require 'config-dired)
