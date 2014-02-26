@@ -37,7 +37,6 @@
     (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
     (eldoc-mode)))
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'quack)
 (setq quack-default-program "mit-scheme")
 
