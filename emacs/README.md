@@ -8,9 +8,10 @@ vibhavp's emacs config
 * magit
 * ir-black-theme
 * paredit
-* slime
 * xkcd
 * smart-mode-line
+* latex-pretty-symbols
+* undo-tree
 * ido-ubiquitous
 * ido-at-point
 * smex
@@ -18,3 +19,11 @@ vibhavp's emacs config
 * gist
 * iedit
 * multiple-cursors
+* clues-theme
+* ix
+* dired-details+
+* emms
+* god-mode
+* flx-ido
+* scheme-complete
+* all
