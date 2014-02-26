@@ -29,5 +29,6 @@
 (package-install 'god-mode)
 (package-install 'flx-ido)
 (package-install 'scheme-complete)
+(package-install 'all)
 
 (provide 'config-packages)
