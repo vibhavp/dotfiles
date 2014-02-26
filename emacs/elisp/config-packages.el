@@ -10,7 +10,7 @@
 (package-install 'magit)
 (package-install 'ir-black-theme)
 (package-install 'paredit)
-(package-install 'slime)
+;;(package-install 'slime)
 (package-install 'xkcd)
 (package-install 'smart-mode-line)
 (package-install 'latex-pretty-symbols)
