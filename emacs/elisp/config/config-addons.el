@@ -20,8 +20,8 @@
 
 ;;Enable notifications, truncate-mode and make ERC interpret
 ;;mIRC colour coding
-;;(require 'erc)
-;;(add-to-list 'erc-modules 'notifications)
+(require 'erc)
+(add-to-list 'erc-modules 'notifications)
 (erc-truncate-mode 1)
 (erc-spelling-mode 1)
 (setq erc-interpret-mirc-color t)
@@ -41,5 +41,9 @@
 				   (recentf-open-files)))
 ;;undo tree
 (global-undo-tree-mode 1)
+
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
 
 (provide 'config-addons)
