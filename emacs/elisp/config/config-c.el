@@ -1,8 +1,9 @@
 ;;Everything related to C
 
 (require 'compile)
-(setq c-default-style "linux"
-      c-basic-offset 8)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (add-hook 'c-mode-hook
           (lambda ()
