@@ -29,6 +29,7 @@
 (package-install 'flx-ido)
 (package-install 'scheme-complete)
 (package-install 'all)
+(package-install 'google-translate)
 
 ;; install el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
