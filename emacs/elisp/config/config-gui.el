@@ -5,6 +5,12 @@
 (menu-bar-mode -1)
 (blink-cursor-mode 0)
 
+;; makes crolling a bit less jumpy.
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
 ;; enable column-number-mode
 (column-number-mode)
 
