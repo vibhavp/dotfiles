@@ -30,7 +30,7 @@
 (package-install 'scheme-complete)
 (package-install 'all)
 (package-install 'google-translate)
-
+(package-install 'google-c-style)
 ;; install el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
