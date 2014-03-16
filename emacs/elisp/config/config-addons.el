@@ -19,13 +19,20 @@
 (sml/setup)
 
 ;;Enable notifications, truncate-mode and make ERC interpret
+;;mirc colors
 ;;mIRC colour coding
 (require 'erc)
 (add-to-list 'erc-modules 'notifications)
 (erc-truncate-mode 1)
 (erc-spelling-mode 1)
 (setq erc-interpret-mirc-color t)
-
+;;enable logging
+(setq erc-log-channels-directory "~/.erc/logs/")
+(setq erc-save-buffer-on-part nil
+      erc-save-queries-on-quit nil
+      erc-log-write-after-send t
+      erc-log-write-after-insert t)
+(add-to-list 'erc-modules 'log)
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
 ;; enable recentf
@@ -45,5 +52,9 @@
 (require 'emms-setup)
 (emms-standard)
 (emms-default-players)
+
+;; set browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "conkeror")
 
 (provide 'config-addons)
