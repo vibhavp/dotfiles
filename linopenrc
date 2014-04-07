@@ -6,5 +6,5 @@ terminal=terminator
 image:feh
 video:vlc
 audio:clementine
-directory: emacs
-text: emacs
+directory: emclient
+text: emclient

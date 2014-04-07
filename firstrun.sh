@@ -1,14 +1,16 @@
 #!/bin/sh
 
-emacs -l ./emacs/firstrun.el
-mkdir ~/.emacs.d/elisp
+emacs -l $(pwd)/emacs/firstrun.el
+mkdir $(pwd)/.emacs.d/elisp
 mkdir ~/.emacs.d/elisp/lisp
-ln -s ./emacs/elisp/config ~/.emacs.d/elisp/config
-ln -s ./emacs/init.el ~/.emacs.d/init.el
+ln -sf $(pwd)/emacs/elisp/config ~/.emacs.d/elisp/config
+ln -sf $(pwd)/emacs/init.el ~/.emacs.d/init.el
 
-ln -s ./scripts/ ~/scripts
-ln -s ./dunstrc ~/.dunstrc
-ln -s ./xinitrc ~/.xinitrc
-ln -s ./xprofile ~/.xprofile
-chmod +x ~/.xprofile
-ln -s ./linopenrc ~/.linopenrc
+ln -sf $(pwd)/scripts/ ~/scripts
+ln -sf $(pwd)/dunstrc ~/.dunstrc
+ln -sf $(pwd)/xinitrc ~/.xinitrc
+ln -sf $(pwd)/xprofile ~/.xprofile
+chmod +x $(pwd)/xprofile
+chmod +x $(pwd)/scripts/emclient
+ln -sf $(pwd)/linopenrc ~/.linopenrc
+sudo ln -sf $(pwd)/scripts/emclient /usr/bin/emclient

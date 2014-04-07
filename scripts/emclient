@@ -1,0 +1,9 @@
+#!/bin/sh
+
+CHECK=$0
+OUTPUT=$(ps aux | grep -v grep | grep -v $CHECK |grep "emacs"|grep " --daemon")
+echo $OUTPUT
+if [ "${#OUTPUT}" -gt 0 ] ;
+then emacsclient -c $1
+else emacs --daemon && emacsclient -c $1
+fi
