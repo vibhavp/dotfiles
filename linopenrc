@@ -1,0 +1,10 @@
+default:echo
+terminal=terminator
+?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':firefox
+.pdf:evince
+.ogg:vlc
+image:feh
+video:vlc
+audio:clementine
+directory: emacs
+text: emacs
