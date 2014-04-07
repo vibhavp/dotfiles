@@ -37,7 +37,7 @@
     (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
     (eldoc-mode)))
 
-(require 'quack)
+;;(require 'quack)
 (setq quack-default-program "mit-scheme")
 
 (provide 'config-lisp)
