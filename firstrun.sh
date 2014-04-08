@@ -11,6 +11,8 @@ ln -sf $(pwd)/dunstrc ~/.dunstrc
 
 ln -sf $(pwd)/x11/xinitrc ~/.xinitrc
 ln -sf $(pwd)/x11/xprofile ~/.xprofile
+ln -sf $(pwd)/x11/Xmodmap ~/.Xmodmap
+
 chmod +x $(pwd)/x11/xprofile
 
 chmod +x $(pwd)/scripts/emclient
