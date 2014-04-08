@@ -1,0 +1,8 @@
+keysym Menu = Hyper_R
+keysym Alt_R = Multi_key
+
+clear Mod3
+clear Mod4
+
+add Mod3 = Hyper_L Hyper_R
+add Mod4 = Super_L Super_R

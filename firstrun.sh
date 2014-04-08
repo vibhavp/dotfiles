@@ -8,9 +8,11 @@ ln -sf $(pwd)/emacs/init.el ~/.emacs.d/init.el
 
 ln -sf $(pwd)/scripts/ ~/scripts
 ln -sf $(pwd)/dunstrc ~/.dunstrc
-ln -sf $(pwd)/xinitrc ~/.xinitrc
-ln -sf $(pwd)/xprofile ~/.xprofile
-chmod +x $(pwd)/xprofile
+
+ln -sf $(pwd)/x11/xinitrc ~/.xinitrc
+ln -sf $(pwd)/x11/xprofile ~/.xprofile
+chmod +x $(pwd)/x11/xprofile
+
 chmod +x $(pwd)/scripts/emclient
 ln -sf $(pwd)/linopenrc ~/.linopenrc
 sudo ln -sf $(pwd)/scripts/emclient /usr/bin/emclient
