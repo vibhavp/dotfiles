@@ -48,4 +48,8 @@ If KEEP-TEXT is t, dont delete the selcted region"
       (insert text)
       (goto-char start))))
 
+(defun erc-foonetic ()
+  (interactive)
+  (erc-tls :server "irc.foonetic.net" :port 7001 :nick "vibhavp" :full-name "Vibhav Pant"))
+
 (provide 'config-functions)
