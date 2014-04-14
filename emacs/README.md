@@ -2,28 +2,29 @@ vibhavp's emacs config
 =====================
 
 #Packages installed by default
-* ace-jump-mode
+* all
 * auctex
 * auto-compile
-* magit
-* ir-black-theme
-* paredit
-* xkcd
-* smart-mode-line
-* latex-pretty-symbols
-* undo-tree
-* ido-ubiquitous
-* ido-at-point
-* smex
-* nlinum
-* gist
-* iedit
-* multiple-cursors
 * clues-theme
-* ix
 * dired-details+
 * emms
-* god-mode
 * flx-ido
+* gist
+* god-mode
+* google-c-style
+* google-translate
+* ido-at-point
+* ido-ubiquitous
+* iedit
+* ir-black-theme
+* ix
+* latex-pretty-symbols
+* magit
+* multiple-cursors
+* nlinum
+* paredit
 * scheme-complete
-* all
+* smart-mode-line
+* smex
+* undo-tree
+* xkcd
