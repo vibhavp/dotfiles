@@ -17,6 +17,7 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "H-i") 'erc-foonetic)
 (global-set-key (kbd "C-c <M-right>") '(lambda ()
 				       (interactive)
 				       (kill-region-to-window 'right)))
