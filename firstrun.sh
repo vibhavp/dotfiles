@@ -9,6 +9,7 @@ ln -sf $(pwd)/emacs/init.el ~/.emacs.d/init.el
 ln -sf $(pwd)/scripts/ ~/scripts
 ln -sf $(pwd)/dunstrc ~/.dunstrc
 ln -sf $(pwd)/zshrc ~/.zshrc
+ln -sf $(pwd)/youtube-dl.conf ~/.youtube-dl.conf
 
 ln -sf $(pwd)/x11/xinitrc ~/.xinitrc
 ln -sf $(pwd)/x11/xprofile ~/.xprofile
