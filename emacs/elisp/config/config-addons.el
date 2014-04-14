@@ -51,7 +51,7 @@
 
 (require 'emms-setup)
 (emms-standard)
-(emms-default-players)
+(require 'emms-player-vlc)
 
 ;; set browser
 (setq browse-url-browser-function 'browse-url-generic
