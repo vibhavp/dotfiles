@@ -15,8 +15,9 @@
 
 (defvar config-recentf-mode-enabled nil)
 ;; smart-mode line
-(setq sml/theme 'light)
+(setq sml/no-confirm-load-theme t)
 (sml/setup)
+(sml/apply-theme 'respectful)
 
 ;;Enable notifications, truncate-mode and make ERC interpret
 ;;mirc colors
@@ -48,10 +49,6 @@
 				   (recentf-open-files)))
 ;;undo tree
 (global-undo-tree-mode 1)
-
-(require 'emms-setup)
-(emms-standard)
-(require 'emms-player-vlc)
 
 ;; set browser
 (setq browse-url-browser-function 'browse-url-generic

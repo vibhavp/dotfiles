@@ -26,8 +26,6 @@
 (install-package 'clues-theme)
 (install-package 'ix)
 (install-package 'dired-details+)
-(install-package 'emms)
-(install-package 'god-mode)
 (install-package 'flx-ido)
 (install-package 'scheme-complete)
 (install-package 'all)

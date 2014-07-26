@@ -1,6 +1,6 @@
 default:echo
 terminal=terminator
-?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':firefox
+?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':opera
 .pdf:evince
 .ogg:vlc
 image:feh

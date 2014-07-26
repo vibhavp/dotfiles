@@ -1,7 +1,7 @@
 #!/bin/sh
 
 emacs -l $(pwd)/emacs/firstrun.el
-mkdir $(pwd)/.emacs.d/elisp
+mkdir ~/.emacs.d/elisp
 mkdir ~/.emacs.d/elisp/lisp
 ln -sf $(pwd)/emacs/elisp/config ~/.emacs.d/elisp/config
 ln -sf $(pwd)/emacs/init.el ~/.emacs.d/init.el

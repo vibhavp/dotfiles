@@ -11,7 +11,6 @@
 (global-set-key (kbd "s-<down>") 'enlarge-window)
 (global-set-key (kbd "C-x u") 'undo-tree-visualize)
 (global-set-key (kbd "C-x M-e") 'eval-and-replace)
-(global-set-key (kbd "<escape>") 'god-mode-all)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
