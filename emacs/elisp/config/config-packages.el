@@ -14,7 +14,6 @@
 (install-package 'paredit)
 (install-package 'xkcd)
 (install-package 'smart-mode-line)
-(install-package 'latex-pretty-symbols)
 (install-package 'undo-tree)
 (install-package 'ido-ubiquitous)
 (install-package 'ido-at-point)
