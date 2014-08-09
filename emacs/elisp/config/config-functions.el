@@ -1,8 +1,9 @@
-(defun pytidy-whole-buffer ()
-  (interactive)
-  (let ((a (point)))
-    (shell-command-on-region (point-min) (point-max) "/home/vibhav/.emacs.d/personal/prettyprint.py" t)
-    (goto-char a)))
+;; enable recentf
+(defun config-recentf-mode-enable ()
+  (unless config-recentf-mode-enabled
+    (recentf-mode 1)
+    (setq recentf-max-menu-items 25)
+    (setq config-recentf-mode-enabled t)))
 
 ;;https://github.com/magnars/.emacs.d/blob/master/defuns/lisp-defuns.el
 (defun eval-and-replace ()
@@ -48,8 +49,20 @@ If KEEP-TEXT is t, dont delete the selcted region"
       (insert text)
       (goto-char start))))
 
+;; Makes sage-view typset output.
+(defun sage-view-enable-inline-output ()
+  "Enable inline output pretty-printing, i.e. typeset output from sage in the `inferior-sage-mode' buffer.
+WARNING: this communicates with the sage process.  Only use this
+when `sage-view' mode is enabled and sage is running."
+  (interactive)
+  (sage-send-command "sys.displayhook = sage.misc.displayhook.DisplayHook(sys.displayhook)" nil t)
+  (sage-send-command "pretty_print_default(True)" nil t)
+  (setq sage-view-inline-output-enabled t)
+  (sage-view-update-modeline))
+
 (defun erc-foonetic ()
   (interactive)
   (erc-tls :server "irc.foonetic.net" :port 7001 :nick "vibhavp" :full-name "Vibhav Pant"))
+
 
 (provide 'config-functions)
