@@ -8,3 +8,5 @@
 (setq erc-interpret-mirc-color t)
 (setq erc-save-buffer-on-part nil
       erc-save-queries-on-quit nil)
+
+(provide 'config-erc)

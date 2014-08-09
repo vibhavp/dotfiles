@@ -16,3 +16,4 @@
 (require 'config-eshell)
 (require 'config-dired)
 (require 'config-ispell)
+(require 'config-erc)
