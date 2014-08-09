@@ -13,3 +13,5 @@ promptinit
 # End of lines added by compinstall
 
 prompt clint
+
+CC="ccache gcc"
