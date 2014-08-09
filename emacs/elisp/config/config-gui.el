@@ -16,6 +16,10 @@
 
 ;; nlinum mode
 (global-nlinum-mode)
+;; disable nlinum mode for ERC and shells
+(add-hook 'erc-mode-hook '(lambda () (nlinum-mode nil)))
+(add-hook 'term-mode-hook '(lambda () (nlinum-mode nil)))
+(add-hook 'eshell-mode-hook '(lambda () (nlinum-mode nil)))
 
 ;; show time on modeline
 (display-time-mode)
@@ -25,9 +29,13 @@
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
+;; smart-mode line
+(setq sml/no-confirm-load-theme t)
+(sml/setup)
+(sml/apply-theme 'respectful)
+
 ;;theme
 (load-theme 'clues t)
-
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 
