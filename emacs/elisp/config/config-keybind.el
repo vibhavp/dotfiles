@@ -1,5 +1,4 @@
-(global-set-key (kbd "<f6>") 'compile)
-(global-set-key (kbd "<f7>") (lambda () (interactive) (load "~/.emacs")))
+(global-set-key (kbd "<f6>") 'compile)(global-set-key (kbd "<f7>") (lambda () (interactive) (load "~/.emacs")))
 (global-set-key (kbd "<f8>") 'znc-all)
 (global-set-key (kbd "<f11>") 'tool-bar-mode)
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
@@ -11,7 +10,6 @@
 (global-set-key (kbd "s-<down>") 'enlarge-window)
 (global-set-key (kbd "C-x u") 'undo-tree-visualize)
 (global-set-key (kbd "C-x M-e") 'eval-and-replace)
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -44,6 +42,10 @@
 (global-set-key (kbd "C-c <down>") '(lambda ()
 				      (interactive)
 				      (kill-region-to-window 'down t)))
+(global-set-key (kbd "C-x C-r") '(lambda ()
+				   (interactive)
+				   (config-recentf-mode-enable)
+				   (recentf-open-files)))
 ;;enable windmove bindings
 (windmove-default-keybindings)
 
