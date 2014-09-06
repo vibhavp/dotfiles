@@ -30,6 +30,7 @@
 (install-package 'all)
 (install-package 'google-translate)
 (install-package 'google-c-style)
+(install-package 'multi-term)
 ;; install el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (setq el-get-github-default-url-type "http")
