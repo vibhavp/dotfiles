@@ -1,3 +1,4 @@
+#!/bin/sh
 #stuff executed on startup
 dunst -config .dunstrc &
 redshift -l 30:78 &
