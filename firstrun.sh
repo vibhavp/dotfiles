@@ -14,6 +14,7 @@ ln -sf $(pwd)/linopenrc ~/.linopenrc
 ln -sf $(pwd)/x11/xinitrc ~/.xinitrc
 ln -sf $(pwd)/x11/xprofile ~/.xprofile
 ln -sf $(pwd)/x11/Xmodmap ~/.Xmodmap
+ln -sf $(pwd)/x11/Xresources ~/.Xresources
 chmod +x $(pwd)/x11/xprofile
 
 chmod +x $(pwd)/scripts/*
