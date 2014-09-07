@@ -1,5 +1,5 @@
 default:echo
-terminal=xfce4-termminal
+terminal=urxvt
 ?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':conkeror
 .pdf:evince
 .html:conkeror
