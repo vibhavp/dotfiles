@@ -1,8 +1,13 @@
 default:echo
 terminal=urxvt
-?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':conkeror
-.pdf:evince
-.html:conkeror
+?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':dwb
+?'^steam:\/\/':steam
+?'^mumble:\/\/':mumble
+.pdf:zathura
+.dvi:zathura
+.ps:zathura
+.djvu:djview
+.html:dwb
 image:feh
 video:vlc
 audio:vlc

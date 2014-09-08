@@ -1,0 +1,3 @@
+[submodule "scripts/linopen"]
+	path = scripts/linopen
+	url = https://github.com/Cloudef/PKGBUILDS.git
