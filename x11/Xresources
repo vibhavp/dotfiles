@@ -3,8 +3,8 @@
 ! Fonts
 URxvt.font: xft:FONT
 
-URxvt.perl-ext-common: default,selection,matcher,url-select,selection-to-clipboard
-URxvt.url-launcher: /usr/bin/conkeror
+URxvt.perl-ext-common: default,selection,matcher,url-select,selection-to-clipboard,tabbed
+URxvt.url-launcher: /usr/bin/dwb
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.underline: true
 URxvt.matcher.button: 1
