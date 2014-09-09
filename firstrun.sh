@@ -21,7 +21,7 @@ chmod +x $(pwd)/x11/xprofile
 
 ln -sf $(pwd)/dwb/custom_keys ~/.config/dwb/default/custom_keys
 ln -sf $(pwd)/dwb/settings ~/.config/dwb/settings
-
+ln -sf $(pwd)/dwb/searchengines ~/.config/dwb/searchengines
 chmod +x $(pwd)/scripts/*
 
 exec $(pwd)/scripts/update-scripts
