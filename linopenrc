@@ -1,6 +1,7 @@
 default:echo
 terminal=urxvt
-?'\\(www.\\|\\(https\\?\\|ftp\\)://\\)':dwb
+?'\\(www.\\|\\(https\\?\\)://\\)':dwb
+?'^ftp:\/\/':filezilla
 ?'^steam:\/\/':steam
 ?'^mumble:\/\/':mumble
 .pdf:zathura
@@ -9,7 +10,7 @@ terminal=urxvt
 .djvu:djview
 .html:dwb
 image:feh
-video:vlc
-audio:vlc
+video:mpv
+audio:mpv
 directory: emclient
 text: emclient
