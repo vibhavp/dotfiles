@@ -2,7 +2,6 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (let ((default-directory "~/.emacs.d/elisp/"))
   (normal-top-level-add-subdirs-to-load-path))
-(require 'config-packages)
 (require 'config-addons)
 (require 'config-c)
 (require 'config-functions)
