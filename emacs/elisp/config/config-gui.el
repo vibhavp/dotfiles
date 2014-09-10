@@ -31,7 +31,7 @@
 (sml/apply-theme 'respectful)
 
 ;;theme
-(load-theme 'clues t)
+(load-theme 'solarized-dark t)
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 
