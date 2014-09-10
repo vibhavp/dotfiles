@@ -1,3 +1,0 @@
-Shift @Left@     :history_back
-Shift @Right@  :history_forward
-q                        :close_tab

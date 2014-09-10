@@ -1,5 +1,0 @@
-#!/bin/bash
-
-case ${DWB_SCHEME} in
-  *) open ${DWB_URI};;
-esac

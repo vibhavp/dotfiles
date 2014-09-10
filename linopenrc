@@ -1,6 +1,6 @@
 default:echo
 terminal=urxvt
-?'\\(www.\\|\\(https\\?\\)://\\)':dwb
+?'\\(www.\\|\\(https\\?\\)://\\)':conkeror
 ?'^ftp:\/\/':filezilla
 ?'^steam:\/\/':steam
 ?'^mumble:\/\/':mumble
