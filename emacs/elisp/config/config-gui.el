@@ -15,7 +15,7 @@
 (column-number-mode)
 
 ;; nlinum mode
-(global-nlinum-mode)
+;;(global-nlinum-mode)
 
 ;; show time on modeline
 (display-time-mode)
