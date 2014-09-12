@@ -2,9 +2,7 @@
 
 emacs -l $(pwd)/emacs/firstrun.el
 if [! -d ~/.emacs.d/elisp ]; then
-    mkdir ~/.emacs.d/elisp
-    mkdir ~/.emacs.d/elisp/lisp
-    ln -sf $(pwd)/emacs/elisp/config ~/.emacs.d/elisp/config
+    ln -sf $(pwd)/emacs/lisp ~/.emacs.d/lisp
     ln -sf $(pwd)/emacs/init.el ~/.emacs.d/init.el
 fi
 
