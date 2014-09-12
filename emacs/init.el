@@ -1,3 +1,6 @@
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (let ((default-directory "~/.emacs.d/elisp/"))
@@ -15,4 +18,4 @@
 (require 'config-eshell)
 (require 'config-dired)
 (require 'config-ispell)
-(require 'config-erc)
+(require 'config-irc)
