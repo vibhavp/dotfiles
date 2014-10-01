@@ -5,3 +5,4 @@ redshift -l 30:78 &
 xmodmap .Xmodmap
 xrdb -merge ~/.Xresources
 emacs --daemon &
+feh --bg-scale /usr/share/backgrounds/gnome/Dark_Ivy.jpg 

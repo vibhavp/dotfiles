@@ -64,5 +64,20 @@ when `sage-view' mode is enabled and sage is running."
   (interactive)
   (erc-tls :server "irc.foonetic.net" :port 7001 :nick "vibhavp" :full-name "Vibhav Pant"))
 
+(defun rcirc-notify-hl (process sender reponse target text)
+  (cond
+   ((string= sender target)
+    ;;privmsg
+    (if (not (string= (downcase sender) "nickserv"))
+   	(ignore-errors (notifications-notify :title (format "MSG from %s" sender)
+					     :body text))
+      (ignore-errors (notifications-notify :title "PRIVMSG from Nickserv"))))
+   ((string-match rcirc-default-nick text)
+    ;;hilight on channel
+    (unless (or (string-match rcirc-default-nick sender)
+		(string= target nil))
+      (ignore-errors (notifications-notify 
+		      :title target
+		      :body (format "%s: %s" sender text)))))))
 
 (provide 'config-functions)

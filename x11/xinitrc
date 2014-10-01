@@ -16,7 +16,7 @@ xset +dpms
 xset dpms 0 0 300
 source ~/.xprofile
 exec i3
-# exec gnome-session
 # exec startkde
 # exec startxfce4
+# exec gnome-session
 # ...or the Window Manager of your choice
