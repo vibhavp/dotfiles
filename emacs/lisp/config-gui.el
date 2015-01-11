@@ -21,7 +21,7 @@
 (display-time-mode)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-8" ))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-9" ))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
@@ -34,5 +34,6 @@
 (load-theme 'solarized-dark t)
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
-
+(require 'printing)
+(setq ps-print-color-p 'black-white)
 (provide 'config-gui)

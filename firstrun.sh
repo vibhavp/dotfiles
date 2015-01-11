@@ -16,8 +16,7 @@ ln -sf $(pwd)/x11/xinitrc ~/.xinitrc
 ln -sf $(pwd)/x11/xprofile ~/.xprofile
 ln -sf $(pwd)/x11/Xmodmap ~/.Xmodmap
 ln -sf $(pwd)/x11/Xresources ~/.Xresources
+ln -sf $(pwd)/mime.conf ~/.config/mimi/mime.conf
 chmod +x $(pwd)/x11/xprofile
 
 chmod +x $(pwd)/scripts/*
-
-exec $(pwd)/scripts/update-scripts

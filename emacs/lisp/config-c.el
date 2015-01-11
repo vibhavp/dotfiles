@@ -20,7 +20,6 @@
                              (or (getenv "CPPFLAGS") "-DDEBUG=9")
                              (or (getenv "CFLAGS") "-g")
                              file))))))
-
 ;; electric-pair-mode
 (electric-pair-mode)
 

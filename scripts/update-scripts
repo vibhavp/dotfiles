@@ -1,4 +1,0 @@
-#!/bin/sh
-
-wget "https://github.com/Cloudef/PKGBUILDS/raw/master/linopen/open" -O $(dirname $0)/open
-chmod +x $(dirname $0)/open
