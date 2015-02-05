@@ -33,5 +33,6 @@
 (install-package 'multi-term)
 (install-package 'haskell-mode)
 (install-package 'twittering-mode)
+(install-package 'elfeed)
 (install-package 'async)
 (save-buffers-kill-emacs)

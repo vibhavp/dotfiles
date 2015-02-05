@@ -1,6 +1,5 @@
-(global-set-key (kbd "<f6>") 'compile)(global-set-key (kbd "<f7>") (lambda () (interactive) (load "~/.emacs")))
-(global-set-key (kbd "<f8>") 'znc-all)
-(global-set-key (kbd "<f11>") 'tool-bar-mode)
+(global-set-key (kbd "<f6>") 'compile)
+(global-set-key (kbd "<f8>") 'znc-all)(global-set-key (kbd "<f11>") 'tool-bar-mode)
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
 (global-set-key (kbd "<XF86Calculator>") 'calc)
 (global-set-key (kbd "<XF86Mail>") 'gnus)

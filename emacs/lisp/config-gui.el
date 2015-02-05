@@ -21,7 +21,7 @@
 (display-time-mode)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-9" ))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-9"))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 

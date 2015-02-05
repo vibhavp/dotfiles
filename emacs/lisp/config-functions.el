@@ -60,24 +60,11 @@ when `sage-view' mode is enabled and sage is running."
   (setq sage-view-inline-output-enabled t)
   (sage-view-update-modeline))
 
-(defun erc-foonetic ()
+(defun load-theme-day ()
   (interactive)
-  (erc-tls :server "irc.foonetic.net" :port 7001 :nick "vibhavp" :full-name "Vibhav Pant"))
+  (load-theme 'solarized-light t))
 
-(defun rcirc-notify-hl (process sender reponse target text)
-  (cond
-   ((string= sender target)
-    ;;privmsg
-    (if (not (string= (downcase sender) "nickserv"))
-   	(ignore-errors (notifications-notify :title (format "MSG from %s" sender)
-					     :body text))
-      (ignore-errors (notifications-notify :title "PRIVMSG from Nickserv"))))
-   ((string-match rcirc-default-nick text)
-    ;;hilight on channel
-    (unless (or (string-match rcirc-default-nick sender)
-		(string= target nil))
-      (ignore-errors (notifications-notify 
-		      :title target
-		      :body (format "%s: %s" sender text)))))))
-
+(defun load-theme-night ()
+  (interactive)
+  (load-theme 'solarized-dark t))
 (provide 'config-functions)

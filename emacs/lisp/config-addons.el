@@ -6,7 +6,7 @@
 
 ;; set browser
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "open")
+      browse-url-generic-program "conkeror")
 
 (require 'multi-term)
 (setq multi-term-program "/usr/bin/fish")
