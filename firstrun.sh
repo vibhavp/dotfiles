@@ -7,7 +7,7 @@ if [! -d ~/.emacs.d/lisp ]; then
 fi
 
 ln -sf $(pwd)/dunstrc ~/.dunstrc
-ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
+ln -sf $(pwd)/zshrc ~/.zshrc
 ln -sf $(pwd)/youtube-dl.conf ~/.youtube-dl.conf
 ln -sf $(pwd)/linopenrc ~/.linopenrc
 ln -sf $(pwd)/livestreamerrc ~/.livestreamerrc
