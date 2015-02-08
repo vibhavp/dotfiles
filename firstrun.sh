@@ -17,7 +17,7 @@ ln -sf $(pwd)/x11/xprofile ~/.xprofile
 ln -sf $(pwd)/x11/Xmodmap ~/.Xmodmap
 ln -sf $(pwd)/x11/Xresources ~/.Xresources
 ln -sf $(pwd)/mime.conf ~/.config/mimi/mime.conf
-ln -sf $(pwd)/emacs.service ~/.config/systemd/emacs.service
-chmod +x $(pwd)/x11/xprofile
-
-chmod +x $(pwd)/scripts/*
+ln -sf $(pwd)/systemd/emacs.service ~/.config/systemd/user/emacs.service
+ln -sf $(pwd)/systemd/offlineimap.service ~/.config/systemd/user/offlineimap.service
+/usr/bin/systemctl --user enable emacs
+/usr/bin/systemctl --user enable offlineimap
