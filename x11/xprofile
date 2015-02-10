@@ -2,3 +2,4 @@ dunst -config .dunstrc &
 xmodmap .Xmodmap
 feh --bg-scale /usr/share/backgrounds/gnome/Dark_Ivy.jpg
 xrdb -merge .Xresources
+emacs --daemon&
