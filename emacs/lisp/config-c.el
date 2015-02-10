@@ -1,5 +1,4 @@
 ;;Everything related to C
-
 (require 'compile)
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
@@ -20,7 +19,16 @@
                              (or (getenv "CPPFLAGS") "-DDEBUG=9")
                              (or (getenv "CFLAGS") "-g")
                              file))))))
-;; electric-pair-mode
 (electric-pair-mode)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 (provide 'config-c)

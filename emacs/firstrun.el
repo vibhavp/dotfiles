@@ -33,4 +33,5 @@
 (install-package 'twittering-mode)
 (install-package 'elfeed)
 (install-package 'async)
+(install-package 'company-irony)
 (save-buffers-kill-emacs)
