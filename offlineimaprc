@@ -1,0 +1,27 @@
+[general]
+accounts = personal
+maxsynaaccounts = 1
+
+[Account personal]
+localrepository = personal-local
+remoterepository = personal-remote
+status_backend = sqlite
+maxage = 3
+autorefresh = 5
+quick = 10
+
+[Repository personal-local]
+type = Maildir
+localfolders = ~/Maildir
+nametrans = lambda folder: {'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository personal-remote]
+type = Gmail
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = <email>  
+remotepass = <password>
+nametrans = lambda folder: {'[Gmail]/All Mail': 'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder == '[Gmail]/All Mail'
+idlefolders=['[Gmail]/All Mail']
