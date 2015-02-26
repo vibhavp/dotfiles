@@ -1,4 +1,4 @@
-#define FONT Inconsolata-8
+#define FONT Inconsolata-9
 
 ! Fonts
 URxvt.font: xft:FONT
