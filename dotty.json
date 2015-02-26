@@ -12,12 +12,14 @@
 	"x11/xinitrc"			: "~/.xinitrc",
 	"x11/xprofile"			: "~/.xprofile",
 	"x11/Xmodmap"			: "~/..Xmodmap",
-	"x11/Xresources"		: "~/.Xresources"
-	"emacs/lisp"                    : "~/.emacs.d/lisp"
-	"emacs/init.el"                 : "~/.emacs.d/init.el"
+	"x11/Xresources"		: "~/.Xresources",
+	"emacs/lisp"                    : "~/.emacs.d/lisp",
+	"emacs/init.el"                 : "~/.emacs.d/init.el",
 	"emacs/firstrun.el"             : "~/.emacs.d/firstrun.el"
     },
+    "copy": {
+	"offlineimaprc" : "~/.offlineimaprc"
+    },
     "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el"
-		 "systemctl --user "
     ]
 }
