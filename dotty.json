@@ -1,0 +1,23 @@
+{
+    "directories": ["~/.config/systemd/user",
+		    "~/.config/mimi",
+		    "~/.emacs.d"],
+    "link": {
+	"dunstrc"			: "~/.dunstrc",
+	"zshrc"				: "~/.zshrc",
+	"youtube-dl.conf"		: "~/.youtube-dl.conf",
+	"livestreamerrc"		: "~/.livestreamerrc",
+	"mime.conf"			: "~/.config/mimi/mime.conf",
+	"systemd/offlineimap.service"	: "~/.config/systemd/user/offlineimap.service",
+	"x11/xinitrc"			: "~/.xinitrc",
+	"x11/xprofile"			: "~/.xprofile",
+	"x11/Xmodmap"			: "~/..Xmodmap",
+	"x11/Xresources"		: "~/.Xresources"
+	"emacs/lisp"                    : "~/.emacs.d/lisp"
+	"emacs/init.el"                 : "~/.emacs.d/init.el"
+	"emacs/firstrun.el"             : "~/.emacs.d/firstrun.el"
+    },
+    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el"
+		 "systemctl --user "
+    ]
+}
