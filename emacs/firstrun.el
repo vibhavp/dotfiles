@@ -28,8 +28,6 @@
 (install-package 'all)
 (install-package 'google-translate)
 (install-package 'google-c-style)
-(install-package 'multi-term)
-(install-package 'haskell-mode)
 (install-package 'twittering-mode)
 (install-package 'elfeed)
 (install-package 'async)
