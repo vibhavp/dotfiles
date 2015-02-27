@@ -8,7 +8,6 @@
 	"youtube-dl.conf"		: "~/.youtube-dl.conf",
 	"livestreamerrc"		: "~/.livestreamerrc",
 	"mime.conf"			: "~/.config/mimi/mime.conf",
-	"systemd/offlineimap.service"	: "~/.config/systemd/user/offlineimap.service",
 	"x11/xinitrc"			: "~/.xinitrc",
 	"x11/xprofile"			: "~/.xprofile",
 	"x11/Xmodmap"			: "~/..Xmodmap",
@@ -18,7 +17,8 @@
 	"emacs/firstrun.el"             : "~/.emacs.d/firstrun.el"
     },
     "copy": {
-	"offlineimaprc" : "~/.offlineimaprc"
+	"offlineimaprc" : "~/.offlineimaprc",
+	"systemd/offlineimap.service": "~/.config/systemd/user/offlineimap.service"
     },
     "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el"
     ]
