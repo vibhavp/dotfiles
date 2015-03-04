@@ -1,7 +1,8 @@
 {
     "directories": ["~/.config/systemd/user",
 		    "~/.config/mimi",
-		    "~/.emacs.d"],
+		    "~/.emacs.d",
+		    "~/.i3"],
     "link": {
 	"dunstrc"			: "~/.dunstrc",
 	"zshrc"				: "~/.zshrc",
@@ -10,16 +11,19 @@
 	"mime.conf"			: "~/.config/mimi/mime.conf",
 	"x11/xinitrc"			: "~/.xinitrc",
 	"x11/xprofile"			: "~/.xprofile",
-	"x11/Xmodmap"			: "~/..Xmodmap",
+	"x11/Xmodmap"			: "~/.Xmodmap",
 	"x11/Xresources"		: "~/.Xresources",
 	"emacs/lisp"                    : "~/.emacs.d/lisp",
 	"emacs/init.el"                 : "~/.emacs.d/init.el",
-	"emacs/firstrun.el"             : "~/.emacs.d/firstrun.el"
+	"emacs/firstrun.el"             : "~/.emacs.d/firstrun.el",
+	"gitconfig"                     : "~/.gitconfig",
+	"i3config"                      : "~/.i3/config"
     },
     "copy": {
 	"offlineimaprc" : "~/.offlineimaprc",
 	"systemd/offlineimap.service": "~/.config/systemd/user/offlineimap.service"
     },
-    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el"
-    ]
+    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
+		 "systemd --user enable offlineimap"
+		]
 }
