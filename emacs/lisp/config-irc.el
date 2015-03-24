@@ -3,5 +3,6 @@
 (defun erc-foonetic ()
   (interactive)
   (erc-tls :server "irc.foonetic.net" :port 7001 :nick "vibhavp" :full-name "Vibhav Pant"))
-
+(setq erc-log-channels-directory "~/.erc/logs/")
+(add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
 (provide 'config-irc)
