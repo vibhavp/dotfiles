@@ -11,7 +11,7 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 # End of lines added by compinstall
-prompt clint
+prompt suse
 
 export PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
-export EDITOR="emacsclient -c"
+export EDITOR="/usr/bin/emacsclient -c"
