@@ -17,9 +17,6 @@
 ;; nlinum mode
 ;;(global-nlinum-mode)
 
-;; show time on modeline
-(display-time-mode)
-
 ;;font
 (add-to-list 'default-frame-alist '(font . "Inconsolata-9"))
 ;; Why not?
