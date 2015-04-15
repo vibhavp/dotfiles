@@ -1,8 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(package-initialize)
 (let ((default-directory "~/.emacs.d/lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 (require 'config-addons)
@@ -21,6 +21,3 @@
 (require 'config-irc)
 (require 'config-gnus)
 (require 'config-elfeed)
-(add-to-list 'load-path (expand-file-name "~/build/erc-social-graph/"))
-(require 'erc-social-graph)
-(erc-social-graph-enable)
