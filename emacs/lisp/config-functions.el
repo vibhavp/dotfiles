@@ -49,16 +49,16 @@ If KEEP-TEXT is t, dont delete the selcted region"
       (insert text)
       (goto-char start))))
 
-;; Makes sage-view typset output.
-(defun sage-view-enable-inline-output ()
-  "Enable inline output pretty-printing, i.e. typeset output from sage in the `inferior-sage-mode' buffer.
-WARNING: this communicates with the sage process.  Only use this
-when `sage-view' mode is enabled and sage is running."
-  (interactive)
-  (sage-send-command "sys.displayhook = sage.misc.displayhook.DisplayHook(sys.displayhook)" nil t)
-  (sage-send-command "pretty_print_default(True)" nil t)
-  (setq sage-view-inline-output-enabled t)
-  (sage-view-update-modeline))
+;; ;; Makes sage-view typset output.
+;; (defun sage-view-enable-inline-output ()
+;;   "Enable inline output pretty-printing, i.e. typeset output from sage in the `inferior-sage-mode' buffer.
+;; WARNING: this communicates with the sage process.  Only use this
+;; when `sage-view' mode is enabled and sage is running."
+;;   (interactive)
+;;   (sage-send-command "sys.displayhook = sage.misc.displayhook.DisplayHook(sys.displayhook)" nil t)
+;;   (sage-send-command "pretty_print_default(True)" nil t)
+;;   (setq sage-view-inline-output-enabled t)
+;;   (sage-view-update-modeline))
 
 (defun load-theme-day ()
   (interactive)
@@ -67,4 +67,9 @@ when `sage-view' mode is enabled and sage is running."
 (defun load-theme-night ()
   (interactive)
   (load-theme 'solarized-dark t))
+
+(defun browse-url-youtube (url)
+  (interactive "sEnter URL: ")
+  (let ((command (format "livestreamer \"%s\" 240p" url)))
+    (async-shell-command command (format "livestreamer \"%s\"" url))))
 (provide 'config-functions)
