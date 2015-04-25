@@ -5,7 +5,10 @@
 (global-undo-tree-mode 1)
 
 ;; set browser
-(setq browse-url-browser-function 'browse-url-chromium)
+(setq browse-url-browser-function '(("i\.imgur\.com" .  browse-url-emacs)
+				    ("youtube\.com"  . browse-url-youtube)
+				    ("."             . browse-url-chromium)))
+
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
       version-control t
       delete-old-versions t
