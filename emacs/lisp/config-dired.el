@@ -1,6 +1,6 @@
-;; '(' and  ')' for details 
-(eval-after-load 'dired '(require 'dired-details+))
-(setq dired-listing-switches "-alh")
-(eval-after-load "dired-aux"
-  '(require 'dired-async))
+;; '(' and  ')' for details
+(require 'dired-details+)
+(require 'dired-async)
+(require 'dired-x)
+(setq dired-listing-switches "-aDlh")
 (provide 'config-dired)
