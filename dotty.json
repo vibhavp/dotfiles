@@ -21,9 +21,7 @@
     },
     "copy": {
 	"offlineimaprc" : "~/.offlineimaprc",
-	"systemd/offlineimap.service": "~/.config/systemd/user/offlineimap.service"
     },
     "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
-		 "systemd --user enable offlineimap"
 		]
 }
