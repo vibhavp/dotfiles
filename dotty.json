@@ -20,8 +20,8 @@
 	"i3config"                      : "~/.i3/config"
     },
     "copy": {
-	"offlineimaprc" : "~/.offlineimaprc",
+	"offlineimaprc" : "~/.offlineimaprc"
     },
-    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
+    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el"
 		]
 }

@@ -32,4 +32,6 @@
 (install-package 'elfeed)
 (install-package 'async)
 (install-package 'company-irony)
+(install-package 'projectile)
+(install-package 'flycheck)
 (save-buffers-kill-emacs)
