@@ -34,4 +34,5 @@
 (install-package 'company-irony)
 (install-package 'projectile)
 (install-package 'flycheck)
+(install-package 'color-theme-sanityinc-tomorrow)
 (save-buffers-kill-emacs)
