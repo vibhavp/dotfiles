@@ -22,6 +22,8 @@
     "copy": {
 	"offlineimaprc" : "~/.offlineimaprc"
     },
-    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el"
+    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
+		 "touch ~/.emacs.d/custom.el",
+		 "touch ~/.emacs.d/lisp/config-twitch.el"
 		]
 }
