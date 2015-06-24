@@ -28,7 +28,8 @@
 (sml/apply-theme 'respectful)
 
 ;;theme
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
+(color-theme-sanityinc-tomorrow-eighties)
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 (require 'printing)
