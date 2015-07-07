@@ -18,7 +18,7 @@
 ;;(global-nlinum-mode)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-9"))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 

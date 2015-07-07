@@ -15,3 +15,4 @@ prompt suse
 
 #export PATH=/usr/local/texlive/2014/bin/x86_64-linux:/usr/lib/ccache/bin/:$PATH
 export EDITOR="/usr/bin/env emacsclient -c -a nano"
+export PATH=$PATH:/sbin/:/usr/sbin/

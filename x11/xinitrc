@@ -14,7 +14,13 @@ fi
 # screen powersave
 xset +dpms
 xset dpms 0 0 300
-source ~/.xprofile
+dunst -config .dunstrc &
+xmodmap .Xmodmap
+#feh --bg-scale /usr/share/backgrounds/gnome/Dark_Ivy.jpg
+xrdb -merge .Xresources
+dbus-daemon
+emacs --daemon
+offlineimap &
 exec i3
 # exec startkde
 # exec startxfce4
