@@ -35,4 +35,7 @@
 (install-package 'projectile)
 (install-package 'flycheck)
 (install-package 'color-theme-sanityinc-tomorrow)
+(install-package 'go-mode)
+(install-package 'company-go)
+(install-package 'go-eldoc)
 (save-buffers-kill-emacs)

@@ -22,4 +22,9 @@
 (projectile-global-mode t)
 (setq projectile-indexing-method 'alien
       projectile-enable-caching t)
+(require 'company)
+(require 'company-go)
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+(add-hook 'before-save-hook #'gofmt-before-save)
 (provide 'config-addons)
