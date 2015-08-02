@@ -8,7 +8,7 @@
 (setq browse-url-browser-function '(("i\.imgur\.com" .  browse-url-emacs)
 				    ("youtube\.com"  . browse-url-youtube)
 				    ("."             . browse-url-chromium)))
-
+(setq browse-url-chromium-program "google-chrome-stable")
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
       version-control t
       delete-old-versions t
@@ -22,9 +22,4 @@
 (projectile-global-mode t)
 (setq projectile-indexing-method 'alien
       projectile-enable-caching t)
-(require 'company)
-(require 'company-go)
-(require 'go-eldoc)
-(add-hook 'go-mode-hook 'go-eldoc-setup)
-(add-hook 'before-save-hook #'gofmt-before-save)
 (provide 'config-addons)

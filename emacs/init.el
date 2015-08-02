@@ -21,4 +21,5 @@
 (require 'config-irc)
 (require 'config-gnus)
 (require 'config-elfeed)
+(require 'config-go)
 (put 'erase-buffer 'disabled nil)
