@@ -1,6 +1,6 @@
 {
     "directories": ["~/.config/systemd/user",
-		    "~/.erc/logs"
+		    "~/.erc/logs",
 		    "~/.config/mimi",
 		    "~/.emacs.d",
 		    "~/.i3"],
@@ -26,5 +26,9 @@
     "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
 		 "touch ~/.emacs.d/custom.el",
 		 "touch ~/.emacs.d/lisp/config-twitch.el"
-		]
+		],
+    "pacman": ["zsh", "i3-wm", "i3lock", "emacs", "xorg-xinit", "xorg-xkill",
+	       "xorg-xrandr", "xorg-xrdb", "feh", "steam", "pcmanfm",
+	       "xfce4-terminal", "dunst", "notification-daemon", "elinks",
+	       "gcc", "clang", "go"]
 }
