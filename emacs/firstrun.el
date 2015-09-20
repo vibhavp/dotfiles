@@ -37,4 +37,6 @@
 (install-package 'color-theme-sanityinc-tomorrow)
 (install-package 'go-mode)
 (install-package 'go-complete)
+(install-package 'ack)
+(install-package 'ace-jump-mode)
 (save-buffers-kill-emacs)
