@@ -23,4 +23,6 @@
 (setq projectile-indexing-method 'alien
       projectile-enable-caching t)
 (setq gc-cons-threshold 100000000)
+(require 'yasnippet)
+(yas-global-mode 1)
 (provide 'config-misc)
