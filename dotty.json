@@ -1,5 +1,6 @@
 {
     "directories": ["~/.config/systemd/user",
+		    "~/.erc/logs"
 		    "~/.config/mimi",
 		    "~/.emacs.d",
 		    "~/.i3"],

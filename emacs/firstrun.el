@@ -36,6 +36,5 @@
 (install-package 'flycheck)
 (install-package 'color-theme-sanityinc-tomorrow)
 (install-package 'go-mode)
-(install-package 'company-go)
-(install-package 'go-eldoc)
+(install-package 'go-complete)
 (save-buffers-kill-emacs)

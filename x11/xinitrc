@@ -21,6 +21,7 @@ xrdb -merge .Xresources
 dbus-daemon
 emacs --daemon
 offlineimap &
+whatpulse &
 exec i3
 # exec startkde
 # exec startxfce4

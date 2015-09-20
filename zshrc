@@ -15,5 +15,5 @@ prompt suse
 
 #export PATH=/usr/local/texlive/2014/bin/x86_64-linux:/usr/lib/ccache/bin/:$PATH
 export EDITOR="emacsclient -c"
-export PATH=$PATH:/sbin/:/usr/sbin/:~/go/bin
+export PATH=$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/
 export GOPATH=~/go
