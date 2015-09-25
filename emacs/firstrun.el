@@ -39,4 +39,5 @@
 (install-package 'go-complete)
 (install-package 'ack)
 (install-package 'ace-jump-mode)
+(install-package 'yasnippet)
 (save-buffers-kill-emacs)

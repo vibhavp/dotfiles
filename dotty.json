@@ -28,7 +28,7 @@
 		 "touch ~/.emacs.d/lisp/config-twitch.el"
 		],
     "pacman": ["zsh", "i3-wm", "i3lock", "emacs", "xorg-xinit", "xorg-xkill",
-	       "xorg-xrandr", "xorg-xrdb", "feh", "steam", "pcmanfm",
+	       "xorg-xrandr", "xorg-xrdb", "feh", "pcmanfm", "dmenu", "i3status",
 	       "xfce4-terminal", "dunst", "notification-daemon", "elinks",
-	       "gcc", "clang", "go"]
+	       "ttf-inconsolata", "xorg-xinput", "gcc", "clang", "go"]
 }
