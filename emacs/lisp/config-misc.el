@@ -25,4 +25,8 @@
 (setq gc-cons-threshold 100000000)
 (require 'yasnippet)
 (yas-global-mode 1)
+(erc-services-mode 1)
+(erc-spelling-mode 1)
+(origami-mode 1)
+(setq erc-server-auto-reconnect nil)
 (provide 'config-misc)

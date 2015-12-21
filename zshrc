@@ -11,9 +11,12 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 # End of lines added by compinstall
-prompt suse
+prompt fade red
 
 #export PATH=/usr/local/texlive/2014/bin/x86_64-linux:/usr/lib/ccache/bin/:$PATH
 export EDITOR="emacsclient -c"
-export PATH=$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/
+export PATH=$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/:~/npm-global/bin/
 export GOPATH=~/go
+
+export WINEARCH=win32
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib

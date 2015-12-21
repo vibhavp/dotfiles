@@ -15,6 +15,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "H-i") 'erc-foonetic)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-c c") 'origami-toggle-node)
 ;;enable windmove bindings
 (windmove-default-keybindings)
 
