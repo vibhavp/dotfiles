@@ -15,10 +15,10 @@
 (column-number-mode)
 
 ;; nlinum mode
-;;(global-nlinum-mode)
+(global-nlinum-mode)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
+(add-to-list 'default-frame-alist '(font . "InconsolataGo-10"))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
@@ -28,8 +28,8 @@
 (sml/apply-theme 'respectful)
 
 ;;theme
-;;(load-theme 'solarized-dark t)
-(color-theme-sanityinc-tomorrow-eighties)
+(load-theme 'solarized-dark t)
+;;(color-theme-sanityinc-tomorrow-eighties)
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 (require 'printing)
