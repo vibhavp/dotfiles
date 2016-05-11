@@ -1,11 +1,11 @@
-exec "feh --bg-scale Images/wallpaper.jpg"
+exec "feh --bg-scale Images/wallpaper.png"
 exec "whatpulse &"
 
 set $mod Mod4
 font pango:Inconsolata 9
 floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+l exec "i3lock"
+bindsym $mod+l exec "i3lock -i ~/Images/wallpaper.png"
 bindsym $mod+Shift+l exec "systemctl suspend && i3lock"
 bindsym $mod+x exec "emacsclient -c"
 bindsym $mod+Shift+q kill
