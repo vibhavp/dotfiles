@@ -1,6 +1,7 @@
-(setq exec-path (append exec-path (list (expand-file-name  "~/go/bin") (expand-file-name "~/bin"))))
+(setq exec-path (append exec-path (list (expand-file-name  "~/go/bin") (expand-file-name "~/bin") (expand-file-name "~/npm-global/bin"))))
 (setenv "GOPATH" (expand-file-name "~/go/"))
-(setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/go/bin")))
+(setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/go/bin") ":" (expand-file-name "~/bin")
+		       ":" (expand-file-name "~/npm-global/bin")))
 
 (require 'package)
 (add-to-list 'package-archives
@@ -27,4 +28,5 @@
 (require 'config-elfeed)
 (require 'config-go)
 (require 'config-twitch)
+(require 'config-rust)
 (put 'erase-buffer 'disabled nil)
