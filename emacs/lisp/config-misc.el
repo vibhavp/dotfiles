@@ -21,12 +21,20 @@
 (require 'projectile)
 (projectile-global-mode t)
 (setq projectile-indexing-method 'alien
-      projectile-enable-caching t)
-(setq gc-cons-threshold 100000000)
+      projectile-enable-caching t
+      projectile-mode-line "Projectile"
+      projectile-file-exists-remote-cache-expire nil)
 (require 'yasnippet)
 (yas-global-mode 1)
 (erc-services-mode 1)
 (erc-spelling-mode 1)
 (origami-mode 1)
 (setq erc-server-auto-reconnect nil)
+(require 'sqlplus)
+(require 'editorconfig)
+(editorconfig-mode 1)
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
+(add-hook 'erc-mode-hook #'(lambda () (nlinum-mode -1)))
 (provide 'config-misc)
