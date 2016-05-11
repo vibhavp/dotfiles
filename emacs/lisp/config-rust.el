@@ -1,0 +1,5 @@
+(setq racer-cmd "~/.cargo/bin/racer")
+(setq racer-rust-src-path "~/src/rustc-nightly/src")
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(provide 'config-rust)
