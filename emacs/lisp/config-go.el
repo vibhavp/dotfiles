@@ -1,4 +1,8 @@
 (require 'go-complete)
+(require 'go-mode)
+;;(setq gofmt-command "goimports")
 (add-hook 'completion-at-point-functions 'go-complete-at-point)
 (add-hook 'before-save-hook 'gofmt-before-save)
+(require 'speedbar)
+(speedbar-add-supported-extension ".go")
 (provide 'config-go)
