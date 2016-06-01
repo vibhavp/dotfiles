@@ -16,7 +16,6 @@ xset +dpms
 xset dpms 0 0 300
 dunst -config .dunstrc &
 xmodmap .Xmodmap
-xrdb -merge .Xresources
 dbus-daemon
 emacs --daemon 
 xinput set-prop 8 272 -1
