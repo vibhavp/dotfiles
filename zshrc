@@ -22,6 +22,7 @@ export WINEARCH=win32
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 export RUST_SRC_PATH=~/src/rustc-nightly/src
+export STEAM_RUNTIME=0
 
 # added by travis gem
 [ -f /home/vibhavp/.travis/travis.sh ] && source /home/vibhavp/.travis/travis.sh

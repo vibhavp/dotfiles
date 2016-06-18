@@ -41,4 +41,5 @@
 (install-package 'ace-jump-mode)
 (install-package 'yasnippet)
 (install-package 'origami-mode)
+(install-package 'exec-path-from-shell)
 (save-buffers-kill-emacs)

@@ -1,8 +1,3 @@
-(setq exec-path (append exec-path (list (expand-file-name  "~/go/bin") (expand-file-name "~/bin") (expand-file-name "~/npm-global/bin"))))
-(setenv "GOPATH" (expand-file-name "~/go/"))
-(setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/go/bin") ":" (expand-file-name "~/bin")
-		       ":" (expand-file-name "~/npm-global/bin")))
-
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -30,3 +25,5 @@
 (require 'config-twitch)
 (require 'config-rust)
 (put 'erase-buffer 'disabled nil)
+(exec-path-from-shell-initialize)
+(setenv "GOPATH" (expand-file-name "~/go/"))

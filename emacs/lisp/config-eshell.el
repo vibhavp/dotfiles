@@ -1,4 +1,6 @@
 (require 'em-tramp)
 (eval-after-load 'eshell '(setenv "CC" "gcc"))
 (eshell-command "alias sudo 'eshell/sudo $*'")
+(setq eshell-path-env (getenv "PATH"))
+(add-hook 'eshell-mode-hook #'(lambda () (nlinum-mode -1)))
 (provide 'config-eshell)

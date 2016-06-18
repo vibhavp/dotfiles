@@ -5,10 +5,9 @@
 (global-undo-tree-mode 1)
 
 ;; set browser
-(setq browse-url-browser-function '(("i\.imgur\.com" .  browse-url-emacs)
-				    ("youtube\.com"  . browse-url-youtube)
-				    ("."             . browse-url-chromium)))
-(setq browse-url-chromium-program "google-chrome-stable")
+(setq browse-url-browser-function 'browse-url-chromium
+      browse-url-chromium-program "google-chrome-stable")
+
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
       version-control t
       delete-old-versions t
@@ -37,4 +36,6 @@
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
 (add-hook 'erc-mode-hook #'(lambda () (nlinum-mode -1)))
+  (setq python-shell-interpreter "ipython"
+       python-shell-interpreter-args "-i")
 (provide 'config-misc)
