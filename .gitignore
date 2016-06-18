@@ -1,3 +1,3 @@
-emacs/lisp/config-twitchirc.el
+emacs/lisp/config-twitch.el
 *.elc
 gitconfig
