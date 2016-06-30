@@ -25,5 +25,4 @@
 (require 'config-twitch)
 (require 'config-rust)
 (put 'erase-buffer 'disabled nil)
-(exec-path-from-shell-initialize)
 (setenv "GOPATH" (expand-file-name "~/go/"))

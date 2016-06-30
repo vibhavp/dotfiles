@@ -29,7 +29,6 @@
 (erc-spelling-mode 1)
 (origami-mode 1)
 (setq erc-server-auto-reconnect nil)
-(require 'sqlplus)
 (require 'editorconfig)
 (editorconfig-mode 1)
 (require 'keyfreq)

@@ -3,4 +3,7 @@
 (eshell-command "alias sudo 'eshell/sudo $*'")
 (setq eshell-path-env (getenv "PATH"))
 (add-hook 'eshell-mode-hook #'(lambda () (nlinum-mode -1)))
+(if (not (eq system-type 'windows-nt))
+    (exec-path-from-shell-initialize)
+  (setq exec-path (split-string eshell-path-env ";")))
 (provide 'config-eshell)
