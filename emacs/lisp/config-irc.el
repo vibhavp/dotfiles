@@ -8,4 +8,6 @@
   (erc-tls :server "irc.mozilla.org" :port 6697 :nick "vibhavp" :full-name "Vibhav Pant"))
 (setq erc-log-channels-directory "~/.erc/logs/")
 (add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
+(require 'erc-twitch)
+(erc-twitch-enable)
 (provide 'config-irc)
