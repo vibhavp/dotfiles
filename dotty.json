@@ -25,11 +25,11 @@
     },
     "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
 		 "touch ~/.emacs.d/custom.el",
-		 "echo \"(provide 'config-twitch)\" ~/.emacs.d/lisp/config-twitch.el",
+		 "echo \"(provide 'config-twitch)\" ~/.emacs.d/lisp/config-twitch.el"
 		],
     "pacman": ["zsh", "i3-wm", "i3lock", "emacs", "xorg-xinit", "xorg-xkill",
 	       "xorg-xrandr", "xorg-xrdb", "feh", "pcmanfm", "dmenu", "i3status",
 	       "xfce4-terminal", "dunst", "notification-daemon", "elinks",
 	       "ttf-inconsolata", "xorg-xinput", "gcc", "clang", "go", "steam", "beets",
-	       "libnotify", "livestreamer", "vlc", "libmtp", "gvfs-mtp"]
+	       "libnotify", "livestreamer", "vlc", "libmtp", "gvfs-mtp", "xorg-server"]
 }

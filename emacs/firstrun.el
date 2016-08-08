@@ -16,8 +16,6 @@
 	dired-details
 	dtrt-indent
 	editorconfig
-	editorconfig-core
-	editorconfig-fnmatch
 	elfeed
 	erc-social-graph
 	erc-twitch
@@ -79,7 +77,12 @@
 	async
 	xkcd
 	yaml-mode
-	yasnippet))
+	yasnippet
+	undo-tree
+	projectile
+	yasnippet
+	origami
+	keyfreq))
 (dolist (package dotfiles-package-list)
   (unless (package-installed-p package)
     (package-install package)))

@@ -84,6 +84,5 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bar {
-	tray_output VGA-0
         status_command i3status
 }
