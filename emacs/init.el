@@ -24,5 +24,6 @@
 (require 'config-go)
 (require 'config-twitch)
 (require 'config-rust)
+(require 'config-webdev)
 (put 'erase-buffer 'disabled nil)
 (setenv "GOPATH" (expand-file-name "~/go/"))
