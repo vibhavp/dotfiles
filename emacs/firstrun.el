@@ -82,7 +82,8 @@
 	projectile
 	yasnippet
 	origami
-	keyfreq))
+	keyfreq
+	web-mode))
 (dolist (package dotfiles-package-list)
   (unless (package-installed-p package)
     (package-install package)))
