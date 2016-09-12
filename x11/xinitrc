@@ -19,6 +19,9 @@ xmodmap .Xmodmap
 dbus-daemon
 emacs --daemon 
 xinput set-prop 8 272 -1
+#/usr/lib64/gnome-settings-daemon/gnome-settings-daemon &
+xsetroot -cursor_name left_ptr
+#exec dbus-launch --exit-with-session emacs
 exec i3
 # exec startkde
 # exec startxfce4

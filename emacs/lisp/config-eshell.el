@@ -1,6 +1,8 @@
 (require 'em-tramp)
 (eval-after-load 'eshell '(setenv "CC" "gcc"))
 (eshell-command "alias sudo 'eshell/sudo $*'")
+(setq password-cache t
+      password-cache-expiry 3600)
 (exec-path-from-shell-initialize)
 (add-hook 'eshell-mode-hook #'(lambda () (nlinum-mode -1) (setq eshell-path-env (getenv "PATH"))))
 (if (not (eq system-type 'windows-nt))

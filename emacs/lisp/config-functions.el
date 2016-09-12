@@ -72,4 +72,5 @@ If KEEP-TEXT is t, dont delete the selcted region"
   (interactive "sEnter URL: ")
   (let ((command (format "livestreamer \"%s\" 240p" url)))
     (async-shell-command command (format "livestreamer \"%s\"" url))))
+
 (provide 'config-functions)
