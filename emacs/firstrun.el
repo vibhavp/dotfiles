@@ -83,7 +83,8 @@
 	yasnippet
 	origami
 	keyfreq
-	web-mode))
+	web-mode
+	js2-mode))
 (dolist (package dotfiles-package-list)
   (unless (package-installed-p package)
     (package-install package)))
