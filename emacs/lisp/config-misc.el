@@ -14,7 +14,7 @@
       kept-new-versions 6
       kept-old-versions 2
       backup-by-copying t)
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file)
 (setq initial-buffer-choice 'eshell)
 (require 'projectile)
@@ -36,5 +36,6 @@
 (keyfreq-autosave-mode 1)
 (add-hook 'erc-mode-hook #'(lambda () (nlinum-mode -1)))
   (setq python-shell-interpreter "ipython"
-       python-shell-interpreter-args "-i")
+	python-shell-interpreter-args "-i")
+(setq w32-get-true-file-attributes nil)
 (provide 'config-misc)

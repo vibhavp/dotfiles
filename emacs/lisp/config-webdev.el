@@ -1,5 +1,3 @@
-(require 'web-mode)
-
 (setq web-mode-enable-current-element-highlight t
       web-mode-enable-current-column-highlight t)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))

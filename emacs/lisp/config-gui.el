@@ -6,10 +6,10 @@
 (blink-cursor-mode 0)
 
 ;; makes crolling a bit less jumpy.
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq mouse-wheel-follow-mouse t ;; scroll window under mouse
+      scroll-step 1 ;; keyboard scroll one line at a time
+      mouse-wheel-progressive-speed nil ;; don't accelerate scrollin
+      mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 
 ;; enable column-number-mode
 (column-number-mode)
@@ -33,5 +33,6 @@
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 (require 'printing)
-(setq ps-print-color-p 'black-white)
+(setq ps-print-color-p 'black-white
+      visible-bell t)
 (provide 'config-gui)

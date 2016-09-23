@@ -84,7 +84,8 @@
 	origami
 	keyfreq
 	web-mode
-	js2-mode))
+	js2-mode
+	typescript-mode))
 (dolist (package dotfiles-package-list)
   (unless (package-installed-p package)
     (package-install package)))
