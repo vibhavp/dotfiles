@@ -12,6 +12,5 @@
 	(if (file-executable-p eslint)
 	    (setq-local flycheck-javascript-eslint-executable eslint)
 	  (setq-local flycheck-javascript-eslint-executable (format "node %s" eslint))))))
-
 (add-hook 'js2-mode-hook 'use-eslint-from-node-modules)
 (provide 'config-js)
