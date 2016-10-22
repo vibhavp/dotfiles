@@ -2,6 +2,7 @@
     "directories": ["~/.config/systemd/user",
 		    "~/.erc/logs",
 		    "~/.config/mimi",
+		    "~/.config/beets",
 		    "~/.emacs.d",
 		    "~/.i3"],
     "link": {
@@ -21,7 +22,8 @@
 	"i3config"                      : "~/.i3/config"
     },
     "copy": {
-	"offlineimaprc" : "~/.offlineimaprc"
+	"offlineimaprc" : "~/.offlineimaprc",
+	"beets-config.yaml" : "~/.config/beets/config.yaml"
     },
     "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
 		 "touch ~/.emacs.d/custom.el",
