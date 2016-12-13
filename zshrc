@@ -15,8 +15,9 @@ prompt fade red
 
 #export PATH=/usr/local/texlive/2014/bin/x86_64-linux:/usr/lib/ccache/bin/:$PATH
 export EDITOR="emacsclient -c"
-export PATH=$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/:~/.npm-global/bin/:~/.cargo/bin/:~/npm-global/bin/
+export PATH=$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/:~/.npm-global/bin/:~/.cargo/bin/:~/npm-global/bin/:/home/vibhavp/.cask/bin
 export GOPATH=~/go
+#export RLS_ROOT=~/src/rls
 
 #export WINEARCH=win32
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
