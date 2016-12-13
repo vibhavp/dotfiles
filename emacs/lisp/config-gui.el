@@ -35,4 +35,9 @@
 (require 'printing)
 (setq ps-print-color-p 'black-white
       visible-bell t)
+;;hide some minor modes
+(require 'rich-minority)
+(setq rm-blacklist (append rm-blacklist '(" EditorConfig" " yas" " Undo-Tree"
+					  " ARev" " ElDoc")))
+(rich-minority-mode 1)
 (provide 'config-gui)
