@@ -21,7 +21,6 @@
 (projectile-global-mode t)
 (setq projectile-indexing-method 'alien
       projectile-enable-caching t
-      projectile-mode-line "Projectile"
       projectile-file-exists-remote-cache-expire nil)
 (require 'yasnippet)
 (yas-global-mode 1)
