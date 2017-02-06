@@ -5,5 +5,3 @@ clear Mod4
 
 add Mod3 = Hyper_L Hyper_R
 add Mod4 = Super_L Super_R
-
-keysym Alt_R = KP_Space
