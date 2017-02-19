@@ -1,5 +1,6 @@
 exec "feh --bg-scale Images/wallpaper.png"
 exec "whatpulse &"
+exec "libinput-gestures-setup start"
 
 set $mod Mod4
 font pango:Inconsolata 9
