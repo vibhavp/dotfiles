@@ -31,5 +31,8 @@
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 (when (eq system-type 'windows-nt)
   (setq w32-pipe-read-delay 0))
-(global-flycheck-mode t)
+(use-package flycheck
+  :config
+  (global-flycheck-mode t))
+
 (provide 'config-c)

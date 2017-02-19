@@ -5,6 +5,7 @@
 (package-initialize)
 (let ((default-directory "~/.emacs.d/lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
+(require 'use-package)
 (require 'config-misc)
 (require 'config-c)
 (require 'config-functions)

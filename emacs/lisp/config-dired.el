@@ -1,6 +1,9 @@
 ;; '(' and  ')' for details
-(require 'dired-details+)
-(require 'dired-async)
-(require 'dired-x)
-(setq dired-listing-switches "-aDlh")
+(use-package dired
+  :init
+  (setq dired-listing-switches "-aDlh"))
+(use-package dired-async)
+(use-package dired-details+)
+(use-package dired-x)
+
 (provide 'config-dired)

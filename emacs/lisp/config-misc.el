@@ -1,9 +1,5 @@
 (defvar config-recentf-mode-enabled nil)
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/zsh"))
-
-;;undo tree
-(global-undo-tree-mode 1)
-
 ;; set browser
 (setq browse-url-browser-function 'browse-url-chromium
       browse-url-chromium-program "google-chrome-stable")
@@ -17,24 +13,49 @@
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file)
 (setq initial-buffer-choice 'eshell)
-(require 'projectile)
-(projectile-global-mode t)
-(setq projectile-indexing-method 'alien
+
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode 1))
+(use-package projectile
+  :config
+  (projectile-mode t)
+  :init
+  (setq projectile-indexing-method 'alien
       projectile-enable-caching t
-      projectile-file-exists-remote-cache-expire nil)
-(require 'yasnippet)
-(yas-global-mode 1)
-(erc-services-mode 1)
-(erc-spelling-mode 1)
+      projectile-file-exists-remote-cache-expire nil))
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
+(use-package erc
+  :init
+  (setq erc-server-auto-reconnect nil)
+  (add-hook 'erc-mode-hook #'(lambda () (nlinum-mode -1)))
+  :config
+  (erc-services-mode 1)
+  (erc-spelling-mode 1))
+
 (origami-mode 1)
-(setq erc-server-auto-reconnect nil)
-(require 'editorconfig)
-(editorconfig-mode 1)
-(require 'keyfreq)
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)
-(add-hook 'erc-mode-hook #'(lambda () (nlinum-mode -1)))
-  (setq python-shell-interpreter "ipython"
-	python-shell-interpreter-args "-i")
-(setq w32-get-true-file-attributes nil)
+
+(use-package editorconfig
+  :config
+  (editorconfig-mode 1))
+
+(use-package keyfreq
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
+
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i"
+      w32-get-true-file-attributes nil)
+
+(add-hook 'kill-emacs-hook #'(lambda ()
+			       (find-file "~/.emacs.d/packages.el")
+			       (goto-char (point-min))
+			       (erase-buffer)
+			       (insert (format "%s" package-activated-list))
+			       (save-buffer)))
+
 (provide 'config-misc)

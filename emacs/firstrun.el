@@ -87,7 +87,8 @@
 	js2-mode
 	typescript-mode
 	rich-minority
-	highlight-indentation))
+	highlight-indentation
+	use-package))
 (dolist (package dotfiles-package-list)
   (unless (package-installed-p package)
     (package-install package)))

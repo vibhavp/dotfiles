@@ -12,10 +12,9 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
-;; auto compile on save
-(require 'auto-compile)
-(auto-compile-on-save-mode)
-
+(use-package auto-compile
+  :config
+  (auto-compile-on-save-mode))
 (autoload 'scheme-smart-complete "scheme-complete" nil t)
 (autoload 'scheme-get-current-symbol-info "scheme-complete" nil t)
 

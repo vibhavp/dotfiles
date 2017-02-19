@@ -1,32 +1,32 @@
 ;; ido and friends
-(require 'flx-ido)
-(setq ido-enable-flex-matching t
-      ido-everywhere t
-      ido-use-filename-at-point 'guess
-      ido-create-new-buffer 'always)
-(ido-mode 1)
-;; use ido everywhere
-(ido-ubiquitous 1)
-;; Use completion at point with ido
-(ido-at-point-mode)
-;; smarter flex matching
-(flx-ido-mode 1)
-(setq ido-use-faces nil)
-
-;; smex
-(require 'smex)
-(smex-initialize)
-;; smex keybindings
-
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+(use-package ido
+  :init
+  (setq ido-enable-flex-matching t
+	ido-everywhere t
+	ido-use-filename-at-point 'guess
+	ido-create-new-buffer 'always
+	ido-use-faces nil)
+  :config
+  (ido-mode 1)
+  (ido-ubiquitous-mode 1)
+  (ido-at-point-mode)
+  (use-package flx-ido
+    :config
+    (flx-ido-mode 1))
+  (use-package smex
+    :config
+    (smex-initialize)
+    :bind (("M-x" . smex)
+	   ("M-X" . smex-major-mode-commands)
+	   ("C-c C-c M-x" . execute-extended-command))))
 
 ;; Replacement for Buffer-menu
-(setq ibuffer-sorting-mode 'alphabetic)
-(setq ibuffer-display-summary nil)
-(setq ibuffer-expert t)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(use-package ibuffer
+  :init
+  (setq ibuffer-sorting-mode 'alphabetic
+	ibuffer-display-summary nil
+	ibuffer-expert t)
+  :bind ("C-x C-b" . ibuffer))
 
 (provide 'config-ido)

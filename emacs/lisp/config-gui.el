@@ -23,21 +23,28 @@
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
 ;; smart-mode line
-(setq sml/no-confirm-load-theme t)
-(sml/setup)
-(sml/apply-theme 'respectful)
+(use-package smart-mode-line
+  :init
+  (setq sml/no-confirm-load-theme t)
+  :config
+  (sml/setup)
+  (sml/apply-theme 'respectful))
 
 ;;theme
 (load-theme 'solarized-dark t)
 ;;(color-theme-sanityinc-tomorrow-eighties)
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
-(require 'printing)
-(setq ps-print-color-p 'black-white
-      visible-bell t)
+
+(use-package printing
+  :config
+  (setq ps-print-color-p 'black-white
+	visible-bell t))
 ;;hide some minor modes
-(require 'rich-minority)
-(setq rm-blacklist (append rm-blacklist '(" EditorConfig" " yas" " Undo-Tree"
-					  " ARev" " ElDoc")))
-(rich-minority-mode 1)
+(use-package rich-minority
+  :init
+  (setq rm-blacklist (append rm-blacklist '(" EditorConfig" " yas" " Undo-Tree"
+					    " ARev" " ElDoc")))
+  :config
+  (rich-minority-mode 1))
 (provide 'config-gui)
