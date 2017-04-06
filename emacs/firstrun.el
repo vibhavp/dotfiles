@@ -9,6 +9,7 @@
 	all
 	auctex
 	auto-compile
+	bbdb
 	color-theme-sanityinc-tomorrow
 	company-irony
 	company
@@ -33,7 +34,7 @@
 	google-translate
 	gotest
 	go-mode
-	f
+	highlight-indentation
 	highlight-tail
 	ido-at-point
 	ido-ubiquitous
@@ -50,6 +51,8 @@
 	magit-popup
 	markdown-mode+
 	markdown-mode
+	marshal
+	ht
 	monokai-theme
 	multi-term
 	multiple-cursors
@@ -62,33 +65,29 @@
 	pkg-info
 	epl
 	racer
+	f
 	request
 	rust-mode
 	s
 	smart-mode-line
 	rich-minority
+	smartparens
 	smex
 	solarized-theme
 	sqlplus
 	twittering-mode
+	typescript-mode
 	undo-tree
+	use-package
+	diminish
+	bind-key
+	web-mode
 	with-editor
 	dash
 	async
 	xkcd
 	yaml-mode
-	yasnippet
-	undo-tree
-	projectile
-	yasnippet
-	origami
-	keyfreq
-	web-mode
-	js2-mode
-	typescript-mode
-	rich-minority
-	highlight-indentation
-	use-package))
+	yasnippet))
 (dolist (package dotfiles-package-list)
   (unless (package-installed-p package)
     (package-install package)))
