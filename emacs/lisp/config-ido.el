@@ -5,11 +5,11 @@
 	ido-everywhere t
 	ido-use-filename-at-point 'guess
 	ido-create-new-buffer 'always
-	ido-use-faces nil)
+	ido-use-faces t)
   :config
   (ido-mode 1)
   (ido-ubiquitous-mode 1)
-  (ido-at-point-mode)
+  (ido-at-point-mode 1)
   (use-package flx-ido
     :config
     (flx-ido-mode 1))
@@ -18,7 +18,7 @@
     (smex-initialize)
     :bind (("M-x" . smex)
 	   ("M-X" . smex-major-mode-commands)
-	   ("C-c C-c M-x" . execute-extended-command))))
+	   ("C-x M-x" . execute-extended-command))))
 
 ;; Replacement for Buffer-menu
 
@@ -26,7 +26,6 @@
   :init
   (setq ibuffer-sorting-mode 'alphabetic
 	ibuffer-display-summary nil
-	ibuffer-expert t)
-  :bind ("C-x C-b" . ibuffer))
+	ibuffer-expert t))
 
 (provide 'config-ido)
