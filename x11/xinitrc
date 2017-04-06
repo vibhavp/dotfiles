@@ -14,11 +14,10 @@ fi
 # screen powersave
 xset +dpms
 xset dpms 0 0 300
-dunst -config .dunstrc &
+#dunst -config .dunstrc &
+/usr/lib/notification-daemon-1.0/notification-daemon &
 xmodmap .Xmodmap
-dbus-daemon
-emacs --daemon 
-xinput set-prop 8 272 -1
+#emacs --daemon &
 #/usr/lib64/gnome-settings-daemon/gnome-settings-daemon &
 xsetroot -cursor_name left_ptr
 #exec dbus-launch --exit-with-session emacs

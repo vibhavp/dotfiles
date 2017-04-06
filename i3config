@@ -1,6 +1,7 @@
-exec "feh --bg-scale Images/wallpaper.png"
+exec "feh --bg-scale ~/Images/wallpaper.png"
 exec "whatpulse &"
 exec "libinput-gestures-setup start"
+exec_always --no-startup-id "sh ~/dotfiles/launch-polybar.sh"
 
 set $mod Mod4
 font pango:Inconsolata 9
@@ -83,7 +84,3 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-
-bar {
-        status_command i3status
-}
