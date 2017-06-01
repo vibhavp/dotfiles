@@ -15,15 +15,20 @@ prompt fade red
 
 #export PATH=/usr/local/texlive/2014/bin/x86_64-linux:/usr/lib/ccache/bin/:$PATH
 export EDITOR="emacsclient -c"
-export PATH=/usr/lib/ccache/bin/:$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/:~/.npm-global/bin/:~/.cargo/bin/:~/npm-global/bin/:/home/vibhavp/.cask/bin
+export PATH=/usr/lib/ccache/bin/:$PATH:/sbin/:/usr/sbin/:~/go/bin:~/bin/:~/.npm-global/bin/:~/.cargo/bin/:~/npm-global/bin/:~/.cask/bin:~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin
+
 export GOPATH=~/go
-#export RLS_ROOT=~/src/rls
+export RLS_ROOT=~/src/rls
 
 #export WINEARCH=win32
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 export RUST_SRC_PATH=~/src/rust/src
 export STEAM_RUNTIME=0
 
 # added by travis gem
 [ -f /home/vibhavp/.travis/travis.sh ] && source /home/vibhavp/.travis/travis.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
