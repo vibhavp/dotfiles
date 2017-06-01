@@ -22,6 +22,12 @@ xmodmap .Xmodmap
 xsetroot -cursor_name left_ptr
 #exec dbus-launch --exit-with-session emacs
 exec i3
+#exec gnome-session
+
+#export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
+#export GNOME_SHELL_SESSION_MODE=classic
+#exec gnome-session --session=gnome-classic
+
 # exec startkde
 # exec startxfce4
 # exec gnome-session
