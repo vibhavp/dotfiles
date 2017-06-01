@@ -10,7 +10,7 @@
 
 (defun erc-foonetic ()
   (interactive)
-  (erc-tls :server "irc.foonetic.net" :port 7001 :nick "vibhavp" :full-name "Vibhav Pant"))
+  (erc-tls :server "anchor.foonetic.net" :port 6697 :nick "vibhavp" :full-name "Vibhav Pant"))
 (defun erc-mozilla ()
   (interactive)
   (erc-tls :server "irc.mozilla.org" :port 6697 :nick "vibhavp" :full-name "Vibhav Pant"))
