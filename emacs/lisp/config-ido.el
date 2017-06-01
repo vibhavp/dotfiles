@@ -8,7 +8,9 @@
 	ido-use-faces t)
   :config
   (ido-mode 1)
-  (ido-ubiquitous-mode 1)
+  (ido-everywhere 1)
+  (use-package ido-ubiquitous
+    :config (ido-ubiquitous-mode 1))
   (ido-at-point-mode 1)
   (use-package flx-ido
     :config
