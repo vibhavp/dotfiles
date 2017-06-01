@@ -2,6 +2,7 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/src/emacs-lsp/")
 (package-initialize)
 (let ((default-directory "~/.emacs.d/lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
@@ -29,3 +30,5 @@
 (require 'config-js)
 (put 'erase-buffer 'disabled nil)
 (setenv "GOPATH" (expand-file-name "~/go/"))
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
