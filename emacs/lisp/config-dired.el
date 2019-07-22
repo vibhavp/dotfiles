@@ -1,10 +1,16 @@
+;; -*- lexical-binding: t; -*-
+
 ;; '(' and  ')' for details
-(use-package dired
-  :init
-  (setq dired-listing-switches "-aDlh")
+(use-package dired)
+
+(use-package dired-async
+  :after dired
   :config
-  (use-package dired-async)
-  (use-package dired-details+)
-  (use-package dired-x))
+  (dired-async-mode)
+  :ensure async)
+
+(use-package dired-x
+  :after dired
+  :hook ((dired-mode . dired-omit-mode)))
 
 (provide 'config-dired)

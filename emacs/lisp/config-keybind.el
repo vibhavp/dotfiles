@@ -7,15 +7,10 @@
 (global-set-key (kbd "s-<left>") 'enlarge-window-horizontally)
 (global-set-key (kbd "s-<up>") 'shrink-window)
 (global-set-key (kbd "s-<down>") 'enlarge-window)
-(global-set-key (kbd "C-x u") 'undo-tree-visualize)
 (global-set-key (kbd "C-x M-e") 'eval-and-replace)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "H-i") 'erc-foonetic)
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
-(global-set-key (kbd "C-c c") 'origami-toggle-node)
+;; (global-set-key (kbd "C-M-i") 'company-complete)
 ;;enable windmove bindings
 (windmove-default-keybindings)
 

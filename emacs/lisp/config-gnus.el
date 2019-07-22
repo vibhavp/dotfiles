@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq gnus-select-method
       '(nnmaildir "GMail" 
 		  (directory "~/Maildir/")

@@ -1,38 +1,23 @@
+;; -*- lexical-binding: t; -*-
+
 ;;Everything related to C
-(require 'compile)
-(require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-(add-hook 'c-mode-hook
-          (lambda ()
-            (unless (file-exists-p "Makefile")
-              (set (make-local-variable 'compile-command)
-                   ;; emulate make's .c.o implicit pattern rule, but with
-                   ;; different defaults for the CC, CPPFLAGS, and CFLAGS
-                   ;; variables:
-                   ;; $(CC) -c -o $@ $(CPPFLAGS) $(CFLAGS) $<
-                   (let ((file (file-name-nondirectory buffer-file-name)))
-                     (format "%s -o %s %s %s %s"
-                             (or (getenv "CC") "gcc")
-                             ;; add your own flags here
-                             (file-name-sans-extension file)
-                             (or (getenv "CPPFLAGS") "-DDEBUG=9")
-                             (or (getenv "CFLAGS") "-g")
-                             file))))))
-(electric-pair-mode)
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
-(when (eq system-type 'windows-nt)
-  (setq w32-pipe-read-delay 0))
+(use-package compile)
+
+(use-package google-c-style
+  :demand t
+  :hook
+  ((c-mode-common . google-set-c-style)
+   (c-mode-common . google-make-newline-indent))
+  :ensure t)
+
 (use-package flycheck
   :config
-  (global-flycheck-mode t))
+  (global-flycheck-mode t)
+  :ensure t)
+
+;; (use-package ccls
+;;   :demand t
+;;   :hook (((c-mode c++-mode objc-mode) . lsp))
+;;   :ensure t)
 
 (provide 'config-c)

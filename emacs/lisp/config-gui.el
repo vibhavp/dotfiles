@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; GUI stuff
 
 (tool-bar-mode -1)
@@ -5,17 +7,18 @@
 (menu-bar-mode -1)
 (blink-cursor-mode 0)
 
-;; makes crolling a bit less jumpy.
-(setq mouse-wheel-follow-mouse t ;; scroll window under mouse
-      scroll-step 1 ;; keyboard scroll one line at a time
-      mouse-wheel-progressive-speed nil ;; don't accelerate scrollin
-      mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(use-package mwheel
+  :init
+  (setq mouse-wheel-follow-mouse t
+	mouse-wheel-progressive-speed nil
+	mouse-wheel-scroll-amount '(1 ((shift) . 1))))
+(setq scroll-step 1)
 
 ;; enable column-number-mode
-(column-number-mode)
+(use-package simple
+  :config (column-number-mode))
 
-;; nlinum mode
-(global-nlinum-mode)
+(setq display-line-numbers t)
 
 ;;font
 (add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
@@ -23,28 +26,58 @@
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
 ;; smart-mode line
-(use-package smart-mode-line
+
+(use-package all-the-icons
+  :ensure t)
+
+(use-package doom-modeline
+  :hook ((after-init . doom-modeline-mode))
+  :after all-the-icons
   :init
-  (setq sml/no-confirm-load-theme t)
-  :config
-  (sml/setup)
-  (sml/apply-theme 'respectful))
+  (setq doom-modeline-height 24)
+  (setq doom-modeline-icon nil)
+  (setq doom-modeline-major-mode-color-icon nil)
+  (setq doom-modeline-lsp t)
+  (setq doom-modeline-github t)
+  (setq doom-modeline-github-interval (* 30 60))
+  (setq doom-modeline-env-version t)
+  (setq doom-modeline-env-enable-python t)
+  (setq doom-modeline-env-enable-ruby t)
+  (setq doom-modeline-env-enable-perl t)
+  (setq doom-modeline-env-enable-go t)
+  (setq doom-modeline-env-enable-elixir t)
+  (setq doom-modeline-env-enable-rust t)
+  (setq doom-modeline-env-python-executable "python")
+  (setq doom-modeline-env-ruby-executable "ruby")
+  (setq doom-modeline-env-perl-executable "perl")
+  (setq doom-modeline-env-go-executable "go")
+  (setq doom-modeline-env-elixir-executable "iex")
+  (setq doom-modeline-env-rust-executable "rustc")
+  :ensure t)
 
 ;;theme
-(load-theme 'solarized-dark t)
+(use-package solarized
+  :config
+  (load-theme 'solarized-dark t)
+  :ensure solarized-theme)
+
 ;;(color-theme-sanityinc-tomorrow-eighties)
 ;; use y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
+(setq visible-bell t)
 
-(use-package printing
+(use-package multiple-cursors
+  :bind (("C->" . mc/mark-next-like-this)
+	 ("C-<" . mc/mark-previous-like-this)
+	 ("C-c C-<" . mc/mark-all-like-this))
+  :ensure t)
+
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-c SPC" . ace-jump-mode))
+
+(use-package windmove
   :config
-  (setq ps-print-color-p 'black-white
-	visible-bell t))
-;;hide some minor modes
-(use-package rich-minority
-  :init
-  (setq rm-blacklist (append rm-blacklist '(" EditorConfig" " yas" " Undo-Tree"
-					    " ARev" " ElDoc")))
-  :config
-  (rich-minority-mode 1))
+  (windmove-default-keybindings 'shift))
+
 (provide 'config-gui)

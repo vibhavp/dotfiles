@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; enable recentf
 (defun config-recentf-mode-enable ()
   (unless config-recentf-mode-enabled
