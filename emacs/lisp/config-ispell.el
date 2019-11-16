@@ -7,7 +7,8 @@
   :after ispell
   :init
   (setq flyspell-issue-message-flag nil)
-  (dolist (hook '(text-mode-hook change-log-mode-hook log-edit-mode-hook))
-    (add-hook hook #'(lambda () (flyspell-mode 1)))))
+  :hook ((text-mode . flyspell-mode)
+	 (change-log-mode-hook . flyspell-mode)
+	 (log-edit-mode-hook . flyspell-mode)))
 
 (provide 'config-ispell)

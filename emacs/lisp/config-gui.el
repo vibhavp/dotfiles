@@ -21,7 +21,7 @@
 (setq display-line-numbers t)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-11"))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
@@ -76,8 +76,20 @@
   :ensure t
   :bind ("C-c SPC" . ace-jump-mode))
 
-(use-package windmove
+(windmove-default-keybindings 'shift)
+
+(use-package emojify
+  :init
+  (setq emojify-emoji-styles 'unicode)
+  (add-hook 'after-init-hook #'global-emojify-mode)
+  :defer t)
+
+(use-package highlight-indentation
+  :ensure t
+  :defer t)
+
+(use-package tab-bar
   :config
-  (windmove-default-keybindings 'shift))
+  (tab-bar-mode))
 
 (provide 'config-gui)

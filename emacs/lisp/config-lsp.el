@@ -16,8 +16,8 @@
   :hook (((c-mode c++-mode objc-mode) . lsp)
 	 (python-mode . lsp)))
 
-(use-package lsp-python-ms
-  :init
-  (setq lsp-python-ms-executable "mspyls"))
+;; (use-package lsp-python-ms
+;;   :init
+;;   (setq lsp-python-ms-executable "mspyls"))
 
 (provide 'config-lsp)

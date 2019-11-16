@@ -2,7 +2,7 @@
   :ensure t)
 
 (use-package ivy
-  :bind ("C-c C-r" . ivy-resume)
+  :bind (("C-c C-r" . ivy-resume))
   :ensure t
   :init
   (setq ivy-re-builders-alist
@@ -16,13 +16,17 @@
   :after flx)
 
 (use-package swiper
-  :bind ("C-s" . swiper)
+  :bind (("C-s" . swiper))
   :after ivy
   :commands swiper
   :ensure t)
 
+(use-package smex
+  :ensure t)
+
 (use-package counsel
   :config (counsel-mode 1)
+  :after smex
   :ensure t)
 
 (use-package ivy-rich

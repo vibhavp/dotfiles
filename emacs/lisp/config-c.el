@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 ;;Everything related to C
-(use-package compile)
 
 (use-package google-c-style
   :demand t

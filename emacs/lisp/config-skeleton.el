@@ -1,4 +1,3 @@
-(require 'skeleton)
 (define-skeleton skel-latex-basic
   "Basic LaTeX skeleton."
   nil
@@ -8,5 +7,3 @@
   "\\end{document}\n")
 
 (provide 'config-skeleton)
-  
-  

@@ -1,23 +1,32 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.milkbox.net/packages/"))
 
-(let ((default-directory "~/.emacs.d/lisp/"))
-  (normal-top-level-add-subdirs-to-load-path))
+;; (let ((default-directory "~/.emacs.d/lisp/"))
+;;   (normal-top-level-add-subdirs-to-load-path))
 
-(require 'use-package)
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-
+(eval-when-compile
+  (require 'use-package))
+(setq use-package-compute-statistics t)
 (use-package benchmark-init
+  :ensure t
   :config
-  (add-hook 'after-init-hook #'benchmark-init/deactivate))
+  ;; To disable collection of benchmark data after init is done.
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+(require 'bind-key)
+
+;; (use-package benchmark-init
+;;   :ensure t
+;;   :config
+;;   (add-hook 'after-init-hook #'benchmark-init/deactivate))
 
 (require 'config-misc)
 (require 'config-functions)
@@ -41,6 +50,9 @@
 (require 'config-js)
 (require 'config-lsp)
 (require 'config-c)
+(require 'config-yaml)
+(require 'config-kotlin)
+(require 'config-java)
 
 (setenv "GOPATH" (expand-file-name "~/go/"))
 (put 'narrow-to-region 'disabled nil)

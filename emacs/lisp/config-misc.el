@@ -33,10 +33,10 @@
 ;;   :config
 ;;   (yas-global-mode 1))
 
-(use-package editorconfig
-  :config
-  (editorconfig-mode 1)
-  :ensure t)
+;; (use-package editorconfig
+;;   :config
+;;   (editorconfig-mode 1)
+;;   :ensure t)
 
 (use-package keyfreq
   :config
@@ -62,7 +62,8 @@
 (setq load-prefer-newer t)
 (use-package saveplace
   :config
-  (save-place-mode 1))
+  (save-place-mode 1)
+  :defer t)
 
 (use-package proced
   :commands proced
@@ -83,7 +84,7 @@
   :hook
   ((prog-mode . turn-on-smartparens-strict-mode)
    (markdown-mode . turn-on-smartparens-strict-mode))
-  :bind ("C-c C-d" . sp-delete-region))
+  :bind ("C-c DEL" . sp-delete-region))
 
 (setq gc-cons-threshold 500000000)
 (setq large-file-warning-threshold 50000000)
@@ -108,39 +109,44 @@
     (column-number-mode nil)))
 
 (use-package dockerfile-mode
-  :ensure t)
+  :ensure t
+  :mode ("Dockerfile\\(?:\\..*\\)?\\'" . dockerfile-mode))
 
 (use-package with-editor
   :ensure t
   :hook ((shell-mode term-exec-hook eshell-mode-hook) .
 	 with-editor-export-editor))
 
-(use-package yaml-mode
-  :ensure t)
-
 (use-package typescript-mode
-  :ensure t)
+  :ensure t
+  :mode ("\\.ts$" . typescript-mode))
 
 (use-package markdown-mode+
   :ensure t)
 
 (use-package racket-mode
-  :ensure t)
-
-(use-package bind-key
-  :ensure t)
+  :ensure t
+  :mode ("\\.rkt[dl]?\\'" . racket-mode))
 
 (use-package restart-emacs
-  :ensure t)
+  :ensure t
+  :commands (restart-emacs))
 
 (use-package google-translate
+  :defer t
   :ensure t)
 
 (use-package ix
+  :commands (ix)
   :ensure t)
 
 (use-package vterm
+  :commands (vterm)
   :custom  (vterm-install t))
+
+(use-package ack
+  :ensure t
+  :commands (ack))
 
 (add-hook 'find-file-hook #'config-misc-large-file-check)
 (provide 'config-misc)

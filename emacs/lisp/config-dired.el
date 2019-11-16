@@ -1,10 +1,12 @@
 ;; -*- lexical-binding: t; -*-
 
 ;; '(' and  ')' for details
-(use-package dired)
+(use-package dired
+  :commands (dired))
 
 (use-package dired-async
   :after dired
+  :defer t
   :config
   (dired-async-mode)
   :ensure async)
