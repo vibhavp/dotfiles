@@ -1,0 +1,15 @@
+{
+    "directories": ["~/.emacs.d"],
+    "link": {
+	"youtube-dl.conf"		: "~/.youtube-dl.conf",
+	"livestreamerrc"		: "~/.livestreamerrc",
+	"emacs/lisp"                    : "~/.emacs.d/lisp",
+	"emacs/init.el"                 : "~/.emacs.d/init.el",
+	"emacs/firstrun.el"             : "~/.emacs.d/firstrun.el",
+	"gitconfig"                     : "~/.gitconfig"
+    },
+    "commands": ["emacs -batch -Q -l ~/.emacs.d/firstrun.el",
+		 "touch ~/.emacs.d/custom.el",
+		 "echo \"(provide 'config-twitch)\" ~/.emacs.d/lisp/config-twitch.el"
+		]
+}
