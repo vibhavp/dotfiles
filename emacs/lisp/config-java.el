@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package lsp-java
   :ensure t
   :after lsp)
