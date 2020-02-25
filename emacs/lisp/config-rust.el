@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; (setq racer-cmd "~/.cargo/bin/racer")
 ;; (setq racer-rust-src-path "~/src/rust/src")
 ;; (add-hook 'rust-mode-hook #'racer-mode)
