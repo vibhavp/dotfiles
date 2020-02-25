@@ -10,7 +10,8 @@
   (setq lsp-enable-snippet nil
 	lsp-auto-configure nil
 	lsp-enable-file-watchers nil
-	lsp-eldoc-render-all t)
+	lsp-eldoc-render-all t
+	lsp-diagnostic-package :flymake)
   (add-to-list 'lsp-disabled-clients 'ccls)
   :load-path "~/src/lsp-mode/"
   :hook (((c-mode c++-mode objc-mode) . lsp)
