@@ -10,13 +10,14 @@
 ;;   :init
 ;;   (add-hook 'before-save-hook 'gofmt-before-save))
 (use-package go-mode
-  :hook ((go-mode . lsp)
+  :hook ((go-mode . (lambda ()
+		      (require 'lsp-go)
+		      (lsp)))
 	 (go-mode . (lambda ()
 		      (flycheck-mode -1)
 		      (lsp--flymake-setup)))
 	 (before-save . gofmt-before-save))
   :after lsp
-  :mode "\\.go\\'"
   :config
   (setq gofmt-command "goimports")
   :ensure t)
