@@ -7,12 +7,14 @@
 (menu-bar-mode -1)
 (blink-cursor-mode 0)
 
-(use-package mwheel
-  :init
-  (setq mouse-wheel-follow-mouse t
-	mouse-wheel-progressive-speed nil
-	mouse-wheel-scroll-amount '(1 ((shift) . 1))))
-(setq scroll-step 1)
+;; (use-package mwheel
+;;   :init
+;;   (setq mouse-wheel-follow-mouse t
+;; 	mouse-wheel-progressive-speed nil
+;; 	mouse-wheel-scroll-amount '(1 ((shift) . 1))))
+;; (setq scroll-step 1)
+
+(pixel-scroll-mode t)
 
 ;; enable column-number-mode
 (use-package simple
@@ -21,7 +23,7 @@
 (setq display-line-numbers t)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-11"))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
@@ -35,8 +37,8 @@
   :after all-the-icons
   :init
   (setq doom-modeline-height 24)
-  (setq doom-modeline-icon nil)
-  (setq doom-modeline-major-mode-color-icon nil)
+  (setq doom-modeline-icon t)
+  (setq doom-modeline-major-mode-color-icon t)
   (setq doom-modeline-lsp t)
   (setq doom-modeline-github t)
   (setq doom-modeline-github-interval (* 30 60))
@@ -79,8 +81,9 @@
 (windmove-default-keybindings 'shift)
 
 (use-package emojify
+  :ensure t
   :init
-  (setq emojify-emoji-styles 'unicode)
+  (setq emojify-emoji-styles '(unicode))
   (add-hook 'after-init-hook #'global-emojify-mode)
   :defer t)
 
@@ -88,8 +91,9 @@
   :ensure t
   :defer t)
 
-(use-package tab-bar
-  :config
-  (tab-bar-mode))
+(when (featurep 'tab-bar)
+  (use-package tab-bar
+    :config
+    (tab-bar-mode)))
 
 (provide 'config-gui)
