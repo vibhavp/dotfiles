@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package ispell
   :init
   (setq ispell-current-dictionary "~/usr/share/hunspell/en-GB"
