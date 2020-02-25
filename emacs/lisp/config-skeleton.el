@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (define-skeleton skel-latex-basic
   "Basic LaTeX skeleton."
   nil
