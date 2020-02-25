@@ -4,6 +4,11 @@
 ;; set browser
 (setq browse-url-browser-function 'browse-url-chrome)
 
+(when (memq window-system '(mac ns))
+  (setq browse-url-chrome-program "open")
+  (setq browse-url-chrome-arguments '("-a" "'Google Chrome'")))
+
+
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
       version-control t
       delete-old-versions t
@@ -86,7 +91,6 @@
    (markdown-mode . turn-on-smartparens-strict-mode))
   :bind ("C-c DEL" . sp-delete-region))
 
-(setq gc-cons-threshold 500000000)
 (setq large-file-warning-threshold 50000000)
 (setq indent-tabs-mode nil)
 
@@ -117,10 +121,6 @@
   :hook ((shell-mode term-exec-hook eshell-mode-hook) .
 	 with-editor-export-editor))
 
-(use-package typescript-mode
-  :ensure t
-  :mode ("\\.ts$" . typescript-mode))
-
 (use-package markdown-mode+
   :ensure t)
 
@@ -149,4 +149,14 @@
   :commands (ack))
 
 (add-hook 'find-file-hook #'config-misc-large-file-check)
+
+(use-package dotenv-mode
+  :ensure t)
+
+(use-package protobuf-mode
+  :ensure t)
+
+(run-with-idle-timer 5 t #'garbage-collect)
+(setq gc-cons-percentage 10)
+
 (provide 'config-misc)
