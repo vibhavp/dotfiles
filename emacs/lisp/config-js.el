@@ -1,3 +1,8 @@
+;; -*- lexical-binding: t; -*-
+
+(use-package prettier-js
+  :ensure t)
+
 (use-package js2-mode
   :mode ("\\.js\\'" . js-mode)
   :interpreter ("node" . js-mode)
@@ -23,6 +28,8 @@
   :hook ((typescript-mode . lsp)
 	 (typescript-mode . prettier-js-mode))
   :config
-  (add-hook 'before-save-hook #'whitespace-cleanup 0 t))
+  (add-hook 'before-save-hook #'whitespace-cleanup 0 t)
+  :mode ("\\.ts$" . typescript-mode)
+  :ensure t)
 
 (provide 'config-js)
