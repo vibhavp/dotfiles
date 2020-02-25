@@ -1,7 +1,4 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+(setq gc-cons-percentage 20)
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -41,10 +38,8 @@
 (require 'config-dired)
 (require 'config-ispell)
 (require 'config-irc)
-(require 'config-gnus)
 (require 'config-elfeed)
 (require 'config-go)
-(require 'config-twitch)
 (require 'config-rust)
 (require 'config-webdev)
 (require 'config-js)
@@ -53,8 +48,10 @@
 (require 'config-yaml)
 (require 'config-kotlin)
 (require 'config-java)
+(require 'config-org)
 
 (setenv "GOPATH" (expand-file-name "~/go/"))
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'erase-buffer 'disabled nil)
+(setq gc-cons-percentage 5)
