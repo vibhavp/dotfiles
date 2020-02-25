@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package flx
   :ensure t)
 
@@ -34,5 +36,9 @@
   (setq ivy-format-function #'ivy-format-function-line)
   :config (ivy-rich-mode 1)
   :ensure t)
+
+(use-package all-the-icons-ivy
+  :ensure t
+  :config (all-the-icons-ivy-setup))
 
 (provide 'config-ivy)
