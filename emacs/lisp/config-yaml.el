@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package yaml-mode
   :ensure t
   :hook ((yaml-mode . highlight-indentation-mode))
