@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package erc
   :commands (erc erc-tls)
   :init
