@@ -12,21 +12,25 @@
   ;;   (erc-twitch-enable))
 )
 
-;; (use-package erc-services
-;;   :config
-;;   (erc-services-mode 1)
-;;   :init
-;;   (setq erc-nickserv-passwords `((SlashNET (("vibhavp" .
-;; 					     ,(funcall
-;; 					       (plist-get (nth 0
-;; 							       (auth-source-search :host "irc.slashnet.org" :max 1 :login "vibhavp")) :secret))))))
-;; 	erc-prompt-for-nickserv-password t)
-;;   :after erc)
+(defun macos-get-keychain-password (item account)
+  (string-trim (shell-command-to-string (format "security find-internet-password -a %s -l %s -g -w" account item))))
 
-(use-package erc-desktop-notifications
+(use-package erc-services
   :config
-  (erc-notifications-mode 1)
+  (erc-services-mode 1)
+  :init
+  (setq erc-nickserv-passwords `((SlashNET (("vibhavp" .
+					     ,(funcall
+					       (plist-get (nth 0
+							       (auth-source-search :host "irc.slashnet.org" :max 1 :login "vibhavp")) :secret))))))
+	erc-prompt-for-nickserv-password t)
   :after erc)
+
+(when (eq window-system 'x)
+  (use-package erc-desktop-notifications
+    :config
+    (erc-notifications-mode 1)
+    :after erc))
 
 (use-package erc-spelling
   :config
