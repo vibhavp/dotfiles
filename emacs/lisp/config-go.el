@@ -12,12 +12,10 @@
 (use-package go-mode
   :hook ((go-mode . (lambda ()
 		      (require 'lsp-go)
-		      (lsp)))
-	 (go-mode . (lambda ()
+		      (lsp)
 		      (flycheck-mode -1)
 		      (lsp--flymake-setup)))
 	 (before-save . gofmt-before-save))
-  :after lsp
   :config
   (setq gofmt-command "goimports")
   :ensure t)
