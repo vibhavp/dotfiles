@@ -49,6 +49,7 @@
 (require 'config-kotlin)
 (require 'config-java)
 (require 'config-org)
+(require 'config-magit)
 
 (setenv "GOPATH" (expand-file-name "~/go/"))
 (put 'narrow-to-region 'disabled nil)
