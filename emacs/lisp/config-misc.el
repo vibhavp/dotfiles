@@ -54,16 +54,12 @@
 ;;       w32-get-true-file-attributes nil)
 
 
-(use-package magit
-  :commands (magit magit-status magit-diff magit-checkout)
-  :ensure t)
-
-(add-hook 'kill-emacs-hook #'(lambda ()
-			       (find-file "~/.emacs.d/packages.el")
-			       (goto-char (point-min))
-			       (erase-buffer)
-			       (insert (format "%s" package-activated-list))
-			       (save-buffer)))
+;; (add-hook 'kill-emacs-hook #'(lambda ()
+;; 			       (find-file "~/.emacs.d/packages.el")
+;; 			       (goto-char (point-min))
+;; 			       (erase-buffer)
+;; 			       (insert (format "%s" package-activated-list))
+;; 			       (save-buffer)))
 (setq load-prefer-newer t)
 (use-package saveplace
   :config
@@ -154,9 +150,14 @@
   :ensure t)
 
 (use-package protobuf-mode
+  :hook (protobuf-mode . (lambda () (add-hook 'before-save-hook #'whitespace-cleanup nil t)))
   :ensure t)
 
 (run-with-idle-timer 5 t #'garbage-collect)
-(setq gc-cons-percentage 10)
+(setq gc-cons-percentage 60)
+
+(setq mac-command-modifier 'meta
+      default-directory "~/"
+      read-process-output-max (* 1024 1024))
 
 (provide 'config-misc)
