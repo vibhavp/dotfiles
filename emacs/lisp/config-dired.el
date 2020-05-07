@@ -2,6 +2,8 @@
 
 ;; '(' and  ')' for details
 (use-package dired
+  :config
+  (setq dired-listing-switches "-alh")
   :commands (dired))
 
 (use-package dired-async
@@ -18,5 +20,10 @@
 (use-package all-the-icons-dired
   :ensure t
   :hook ((dired-mode . all-the-icons-dired-mode)))
+
+(use-package dired-du
+  :ensure t
+  :config
+  (setq dired-du-size-format t))
 
 (provide 'config-dired)
