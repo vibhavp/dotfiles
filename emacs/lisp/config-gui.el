@@ -14,7 +14,7 @@
 ;; 	mouse-wheel-scroll-amount '(1 ((shift) . 1))))
 ;; (setq scroll-step 1)
 
-(pixel-scroll-mode t)
+;; (pixel-scroll-mode t)
 
 ;; enable column-number-mode
 (use-package simple
