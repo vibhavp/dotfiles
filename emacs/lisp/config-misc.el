@@ -160,4 +160,9 @@
       default-directory "~/"
       read-process-output-max (* 1024 1024))
 
+(setq vc-ignore-dir-regexp
+                (format "\\(%s\\)\\|\\(%s\\)"
+                        vc-ignore-dir-regexp
+                        tramp-file-name-regexp))
+
 (provide 'config-misc)
