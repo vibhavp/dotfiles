@@ -6,7 +6,7 @@
 
 (when (memq window-system '(mac ns))
   (setq browse-url-chrome-program "open")
-  (setq browse-url-chrome-arguments '("-a" "'Google Chrome'")))
+  (setq browse-url-chrome-arguments '("-n" "-a" "Google Chrome" "--args")))
 
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
@@ -164,5 +164,9 @@
                 (format "\\(%s\\)\\|\\(%s\\)"
                         vc-ignore-dir-regexp
                         tramp-file-name-regexp))
+
+(use-package json-navigator
+  :commands (json-navigator-navigate-region json-navigator-navigate-after-point)
+  :ensure t)
 
 (provide 'config-misc)
