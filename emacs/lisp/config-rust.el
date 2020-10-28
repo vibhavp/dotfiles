@@ -5,10 +5,7 @@
 ;; (add-hook 'rust-mode-hook #'racer-mode)
 ;; (add-hook 'racer-mode-hook #'eldoc-mode)
 (use-package rust-mode
-  :hook (((rust-mode) . lsp)
-	 ((rust-mode) . (lambda ()
-			  (flycheck-mode -1)
-			  (lsp--flymake-setup))))
+  :hook (((rust-mode) . lsp))
   :after lsp
   :ensure t)
 (provide 'config-rust)
