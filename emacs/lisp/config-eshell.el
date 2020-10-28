@@ -4,7 +4,9 @@
   :init
   (setq exec-path-from-shell-arguments '("-l")
 	exec-path-from-shell-variables '("PATH" "MANPATH" "LC_CTYPE" "LC_ALL"
-					 "GO111MODULE" "GOPRIVATE" "GONOSUMDB"))
+					 "GO111MODULE" "GOPRIVATE" "GOPROXY" "GONOSUMDB" "CASK_EMACS"
+					 "LIBRARY_PATH" "LD_LIBRARY_PATH")
+	exec-path-from-shell-shell-name "/bin/zsh")
   :config
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
