@@ -1,23 +1,23 @@
 ;; -*- lexical-binding: t; -*-
 
-;; (use-package speedbar
-;;   :config
-;;   (speedbar-add-supported-extension ".go"))
-;; (use-package go-complete
-;;   :init
-;;   (add-hook 'completion-at-point-functions 'go-complete-at-point))
-;; (use-package go-mode
-;;   :init
-;;   (add-hook 'before-save-hook 'gofmt-before-save))
 (use-package go-mode
-  :hook ((go-mode . (lambda ()
-		      (require 'lsp-go)
-		      (lsp)
-		      (flycheck-mode -1)
-		      (lsp--flymake-setup)))
-	 (before-save . gofmt-before-save))
+  :hook ((before-save . gofmt-before-save))
+  :defines gofmt-command
   :config
   (setq gofmt-command "goimports")
+  :ensure t)
+
+(use-package lsp-go
+  :demand t
+  :hook ((go-mode . lsp)
+	 (go-mode . lsp-lens-mode))
+  :ensure lsp-mode
+  :after (lsp-mode lsp-lens))
+
+(use-package go-dlv
+  :ensure t)
+
+(use-package go-stacktracer
   :ensure t)
 
 (provide 'config-go)
