@@ -1,6 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 (defvar config-recentf-mode-enabled nil)
 
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
+
 ;; set browser
 (setq browse-url-browser-function 'browse-url-chrome)
 
@@ -38,10 +42,10 @@
 ;;   :config
 ;;   (yas-global-mode 1))
 
-;; (use-package editorconfig
-;;   :config
-;;   (editorconfig-mode 1)
-;;   :ensure t)
+(use-package editorconfig
+  :config
+  (editorconfig-mode 1)
+  :ensure t)
 
 (use-package keyfreq
   :config
@@ -153,8 +157,7 @@
   :hook (protobuf-mode . (lambda () (add-hook 'before-save-hook #'whitespace-cleanup nil t)))
   :ensure t)
 
-(run-with-idle-timer 5 t #'garbage-collect)
-(setq gc-cons-percentage 60)
+(run-with-idle-timer 20 t #'garbage-collect)
 
 (setq mac-command-modifier 'meta
       default-directory "~/"
@@ -167,6 +170,9 @@
 
 (use-package json-navigator
   :commands (json-navigator-navigate-region json-navigator-navigate-after-point)
+  :ensure t)
+
+(use-package caddyfile-mode
   :ensure t)
 
 (provide 'config-misc)
