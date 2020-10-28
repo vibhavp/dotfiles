@@ -1,29 +1,35 @@
-(setq gc-cons-percentage 20)
-(package-initialize)
+;; (setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10")
+
+(setq gc-cons-percentage 5)
+(require 'comp nil t)
+(setq comp-speed 2
+      comp-deferred-compilation t
+      ;; comp-debug 2
+      ;; comp-async-jobs-number 1
+      )
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.milkbox.net/packages/"))
+	     '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 ;; (let ((default-directory "~/.emacs.d/lisp/"))
 ;;   (normal-top-level-add-subdirs-to-load-path))
 
 (eval-when-compile
   (require 'use-package))
+
 (setq use-package-compute-statistics t)
+
 (use-package benchmark-init
   :ensure t
   :config
   ;; To disable collection of benchmark data after init is done.
   (add-hook 'after-init-hook 'benchmark-init/deactivate))
-(require 'bind-key)
 
-;; (use-package benchmark-init
-;;   :ensure t
-;;   :config
-;;   (add-hook 'after-init-hook #'benchmark-init/deactivate))
+(require 'bind-key)
 
 (require 'config-misc)
 (require 'config-functions)
@@ -50,9 +56,7 @@
 (require 'config-java)
 (require 'config-org)
 (require 'config-magit)
+(require 'config-python)
 
-(setenv "GOPATH" (expand-file-name "~/go/"))
-(put 'narrow-to-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(put 'erase-buffer 'disabled nil)
-(setq gc-cons-percentage 5)
+
+(setq gc-cons-percentage 30)
