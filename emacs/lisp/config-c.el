@@ -14,6 +14,12 @@
   (global-flycheck-mode t)
   :ensure t)
 
+(use-package lsp-clangd
+  :demand t
+  :after lsp-mode
+  :ensure lsp-mode
+  :hook (((c-mode c++-mode objc-mode) . lsp)))
+
 ;; (use-package ccls
 ;;   :demand t
 ;;   :hook (((c-mode c++-mode objc-mode) . lsp))
