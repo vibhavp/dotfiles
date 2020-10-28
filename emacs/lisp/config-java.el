@@ -6,9 +6,6 @@
 
 (use-package java-mode
   :after lsp-java
-  :hook ((java-mode . lsp)
-	 (java-mode . (lambda ()
-			  (flycheck-mode -1)
-			  (lsp--flymake-setup)))))
+  :hook ((java-mode . lsp)))
 
 (provide 'config-java)
