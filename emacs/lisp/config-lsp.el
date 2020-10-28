@@ -1,24 +1,35 @@
 ;; -*- lexical-binding: t; -*-
 
-(use-package lsp-clients
-  :config
-  (remhash 'pyls lsp-clients)
-  :load-path "~/src/lsp-mode/")
-
 (use-package lsp-mode
+  :ensure t
   :init
   (setq lsp-enable-snippet nil
 	lsp-auto-configure nil
-	lsp-enable-file-watchers nil
+	lsp-enable-file-watchers t
 	lsp-eldoc-render-all t
-	lsp-diagnostic-package :flymake)
+	lsp-completion-enable t
+	lsp-diagnostics-provider :flymake)
+  :config
   (add-to-list 'lsp-disabled-clients 'ccls)
-  :load-path "~/src/lsp-mode/"
-  :hook (((c-mode c++-mode objc-mode) . lsp)
-	 (python-mode . lsp)))
+  :load-path "~/src/lsp-mode/")
 
-;; (use-package lsp-python-ms
-;;   :init
-;;   (setq lsp-python-ms-executable "mspyls"))
+(use-package lsp-completion
+  :hook (lsp-configure . lsp-completion--enable)
+  :after lsp-mode)
+
+(use-package lsp-diagnostics
+  :hook ((lsp-configure . (lambda ()
+			    (flycheck-mode -1)
+			    (lsp-diagnostics-mode 1))))
+  :load-path "~/src/lsp-mode/"
+  :after lsp-mode)
+
+(use-package lsp-treemacs
+  :ensure t
+  :hook (lsp-mode . lsp-treemacs-sync-mode))
+
+(use-package lsp-lens
+  :ensure lsp-mode
+  :after lsp-mode)
 
 (provide 'config-lsp)
