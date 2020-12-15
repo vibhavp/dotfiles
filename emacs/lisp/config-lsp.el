@@ -11,6 +11,7 @@
 	lsp-diagnostics-provider :flymake)
   :config
   (add-to-list 'lsp-disabled-clients 'ccls)
+  (add-to-list 'lsp-disabled-clients 'jsts-ls)
   :load-path "~/src/lsp-mode/")
 
 (use-package lsp-completion
