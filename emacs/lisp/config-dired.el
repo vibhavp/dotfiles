@@ -4,6 +4,12 @@
 (use-package dired
   :config
   (setq dired-listing-switches "-alh")
+  (when (memq window-system '(mac ns))
+    (setq dired-chmod-program "gtouch"
+	  dired-touch-program "gtouch"
+	  dired-chown-program "gchown"
+	  ls-lisp-use-insert-directory-program t
+	  insert-directory-program "gls"))
   :commands (dired))
 
 (use-package dired-async
