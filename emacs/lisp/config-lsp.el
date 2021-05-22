@@ -8,10 +8,13 @@
 	lsp-enable-file-watchers t
 	lsp-eldoc-render-all t
 	lsp-completion-enable t
-	lsp-diagnostics-provider :flymake)
+	lsp-completion-provider :none
+	lsp-diagnostics-provider :flymake
+	lsp-semantic-tokens-enable t)
   :config
   (add-to-list 'lsp-disabled-clients 'ccls)
   (add-to-list 'lsp-disabled-clients 'jsts-ls)
+  (lsp-semantic-tokens-mode)
   :load-path "~/src/lsp-mode/")
 
 (use-package lsp-completion
