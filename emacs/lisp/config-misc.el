@@ -25,7 +25,6 @@
 
 (use-package undo-tree
   :functions (undo-tree-visualize global-undo-tree-mode)
-  :bind ("C-x u" . undo-tree-visualize)
   :config
   (global-undo-tree-mode 1)
   :ensure t)
@@ -142,6 +141,7 @@
 
 (use-package vterm
   :commands (vterm)
+  :ensure t
   :custom  (vterm-install t))
 
 (use-package ack
@@ -163,16 +163,25 @@
       default-directory "~/"
       read-process-output-max (* 1024 1024))
 
-(setq vc-ignore-dir-regexp
+(use-package vc-hooks
+  :config
+  (setq vc-ignore-dir-regexp
                 (format "\\(%s\\)\\|\\(%s\\)"
                         vc-ignore-dir-regexp
                         tramp-file-name-regexp))
+  :demand t)
 
 (use-package json-navigator
   :commands (json-navigator-navigate-region json-navigator-navigate-after-point)
   :ensure t)
 
 (use-package caddyfile-mode
+  :ensure t)
+
+(use-package realgud
+  :ensure t)
+
+(use-package realgud-lldb
   :ensure t)
 
 (provide 'config-misc)
