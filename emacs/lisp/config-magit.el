@@ -6,7 +6,13 @@
 (use-package magit
   :commands (magit magit-status magit-diff magit-checkout)
   :ensure t
-  :after magit-todos)
+  :demand t
+  ;; :after magit-todos
+  )
+
+(use-package forge
+  :ensure t
+  :after (magit))
 
 ;; (add-hook 'after-init-hook 'magit-todos-mode)
 
