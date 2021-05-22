@@ -3,34 +3,47 @@
 (use-package erc
   :commands (erc erc-tls)
   :init
-  (setq erc-server-auto-reconnect nil)
-  (setq erc-log-channels-directory "~/.erc/logs/")
-  (add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
-  :config
-  ;; (use-package erc-twitch
-  ;;   :config
-  ;;   (erc-twitch-enable))
-)
+  (setq erc-server-auto-reconnect nil))
 
 (defun macos-get-keychain-password (item account)
   (string-trim (shell-command-to-string (format "security find-internet-password -a %s -l %s -g -w" account item))))
 
-(use-package erc-services
+(use-package erc-networks
   :config
-  (erc-services-mode 1)
-  :init
-  (setq erc-nickserv-passwords `((SlashNET (("vibhavp" .
-					     ,(funcall
-					       (plist-get (nth 0
-							       (auth-source-search :host "irc.slashnet.org" :max 1 :login "vibhavp")) :secret))))))
-	erc-prompt-for-nickserv-password t)
+  (add-to-list 'erc-server-alist '("Libera.Chat" Libera\.Chat "irc.libera.chat" (6667 6697)))
+  (add-to-list 'erc-networks-alist '(Libera\.Chat "irc.libera.chat"))
   :after erc)
 
-(when (eq window-system 'x)
-  (use-package erc-desktop-notifications
-    :config
-    (erc-notifications-mode 1)
-    :after erc))
+(use-package erc-services
+  :functions erc-services-mode
+  :config
+  (erc-services-mode 1)
+  (add-to-list 'erc-nickserv-alist
+	       '(Libera.Chat
+		 "NickServ!NickServ@services.libera.chat"
+		 "This\\s-nickname\\s-is\\s-registered.\\s-Please\\s-choose"
+		 "NickServ"
+		 "IDENTIFY" t nil
+		 "You\\s-are\\s-now\\s-identified\\s-for\\s-"))
+  :init
+  (setq erc-prompt-for-nickserv-password nil
+	erc-nickserv-identify-mode 'both
+	erc-use-auth-source-for-nickserv-password t))
+
+(defadvice erc-notifications-notify (around macos-notification)
+    "Trigger notifications on macOS"
+    (let* ((channel (if privp (erc-get-buffer nick) (current-buffer)))
+           (title (format "%s in %s" nick channel))
+           (body (erc-controls-strip (substring-no-properties msg))))
+      (ns-do-applescript (format "display notification %s with title %s"
+				 (prin1-to-string body)
+				 (prin1-to-string title)))))
+
+(use-package erc-desktop-notifications
+  :config
+  (ad-activate 'erc-notifications-notify)
+  (erc-notifications-mode 1)
+  :after erc)
 
 (use-package erc-spelling
   :config
@@ -40,8 +53,9 @@
 (defun erc-slashnet ()
   (interactive)
   (erc-tls :server "irc.slashnet.org" :port 6697 :nick "vibhavp" :full-name "Vibhav Pant"))
-(defun erc-mozilla ()
+
+(defun erc-libera ()
   (interactive)
-  (erc-tls :server "irc.mozilla.org" :port 6697 :nick "vibhavp" :full-name "Vibhav Pant"))
+  (erc-tls :server "irc.libera.chat" :port 6697 :nick "vibhavp" :full-name "Vibhav Pant"))
 
 (provide 'config-irc)
