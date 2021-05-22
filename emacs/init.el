@@ -1,12 +1,10 @@
 ;; (setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10")
 
-(setq gc-cons-percentage 5)
+(setq gc-cons-threshold most-positive-fixnum)
+
 (require 'comp nil t)
-(setq comp-speed 2
-      comp-deferred-compilation t
-      ;; comp-debug 2
-      ;; comp-async-jobs-number 1
-      )
+
+(setq  comp-deferred-compilation t)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
@@ -57,6 +55,7 @@
 (require 'config-org)
 (require 'config-magit)
 (require 'config-python)
+(require 'config-docker)
 
 
-(setq gc-cons-percentage 30)
+(setq gc-cons-threshold 100000000)
