@@ -8,9 +8,16 @@
 
 (use-package lsp-go
   :demand t
-  :hook ((go-mode . lsp)
+  :hook ((go-mode . lsp-deferred)
 	 (go-mode . lsp-lens-mode)
-	 (go-mode . (lambda () (add-hook 'before-save-hook #'lsp-format-buffer 0 t))))
+	 (go-mode . (lambda ()
+		      (push "[/\\\\]vendor" lsp-file-watch-ignored-directories)
+		      (add-hook 'before-save-hook #'lsp-format-buffer 0 t)
+		      (add-hook 'before-save-hook #'lsp-organize-imports 0 t))))
+  :config
+  (lsp-register-custom-settings
+   '(("gopls.completeUnimported" t t)
+     ("gopls.staticcheck" t t)))
   :ensure lsp-mode
   :after (lsp-mode lsp-lens))
 
