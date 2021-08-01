@@ -9,7 +9,6 @@
 (global-set-key (kbd "s-<down>") 'enlarge-window)
 (global-set-key (kbd "C-x M-e") 'eval-and-replace)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "H-i") 'erc-foonetic)
 ;; (global-set-key (kbd "C-M-i") 'company-complete)
 ;;enable windmove bindings
 (windmove-default-keybindings)
