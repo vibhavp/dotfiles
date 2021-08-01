@@ -1,9 +1,17 @@
 ;; (setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10")
 
+(advice-add 'libgit-load :before
+	    (lambda () (setq libgit--module-file
+			     (expand-file-name
+			      (concat "libegit2" (if (and (string-equal system-type "darwin")
+							  (> emacs-major-version 27))
+						     ".so"
+						   module-file-suffix))
+			      libgit--build-dir))))
+
 (setq gc-cons-threshold most-positive-fixnum)
 
 (require 'comp nil t)
-
 (setq  comp-deferred-compilation t)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
