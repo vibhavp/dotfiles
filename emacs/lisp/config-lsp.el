@@ -4,17 +4,20 @@
   :ensure t
   :init
   (setq lsp-enable-snippet nil
-	lsp-auto-configure nil
+	lsp-auto-configure t
+	lsp-enable-text-document-color t
+	lsp-enable-indentation t
+	lsp-enable-symbol-highlighting t
+	lsp-enable-links t
 	lsp-enable-file-watchers t
 	lsp-eldoc-render-all t
 	lsp-completion-enable t
 	lsp-completion-provider :none
 	lsp-diagnostics-provider :flymake
-	lsp-semantic-tokens-enable t)
+	lsp-semantic-tokens-enable nil)
   :config
   (add-to-list 'lsp-disabled-clients 'ccls)
   (add-to-list 'lsp-disabled-clients 'jsts-ls)
-  (lsp-semantic-tokens-mode)
   :load-path "~/src/lsp-mode/")
 
 (use-package lsp-completion
