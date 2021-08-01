@@ -3,7 +3,7 @@
 (use-package erc
   :commands (erc erc-tls)
   :init
-  (setq erc-server-auto-reconnect nil))
+  (setq erc-server-auto-reconnect t))
 
 (defun macos-get-keychain-password (item account)
   (string-trim (shell-command-to-string (format "security find-internet-password -a %s -l %s -g -w" account item))))
