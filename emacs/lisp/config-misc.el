@@ -63,6 +63,7 @@
 ;; 			       (erase-buffer)
 ;; 			       (insert (format "%s" package-activated-list))
 ;; 			       (save-buffer)))
+
 (setq load-prefer-newer t)
 (use-package saveplace
   :config
@@ -154,8 +155,11 @@
   :ensure t)
 
 (use-package protobuf-mode
-  :hook (protobuf-mode . (lambda () (add-hook 'before-save-hook #'whitespace-cleanup nil t)))
-  :ensure t)
+  :hook (protobuf-mode . (lambda ()
+			   (add-hook 'before-save-hook #'whitespace-cleanup nil t)
+			   (add-hook 'before-save-hook #'clang-format+-before-save nil t)))
+  :ensure t
+  :after clang-format+)
 
 (run-with-idle-timer 20 t #'garbage-collect)
 
@@ -179,9 +183,16 @@
   :ensure t)
 
 (use-package realgud
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package realgud-lldb
-  :ensure t)
+    :ensure t
+    :defer t)
+
+(use-package clang-format+
+    :ensure t)
+
+()
 
 (provide 'config-misc)
