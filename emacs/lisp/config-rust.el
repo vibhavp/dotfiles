@@ -15,7 +15,7 @@
   :hook ((rust-mode . lsp)
 	 (rust-mode . lsp-lens-mode)
 	 (rust-mode . (lambda () (add-hook 'before-save-hook #'lsp-format-buffer 0 t))))
-  :ensure lsp-mode
+  :ensure rust-mode
   :after (lsp-mode lsp-lens))
 
 (provide 'config-rust)
