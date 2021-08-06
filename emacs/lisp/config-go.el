@@ -21,8 +21,8 @@
   :ensure lsp-mode
   :after (lsp-mode lsp-lens))
 
-(use-package go-dlv
-  :ensure t)
+;; (use-package go-dlv
+;;   :ensure t)
 
 (use-package go-stacktracer
   :ensure t)
