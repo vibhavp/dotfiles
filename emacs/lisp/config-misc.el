@@ -121,8 +121,8 @@
   :hook ((shell-mode term-exec-hook eshell-mode-hook) .
 	 with-editor-export-editor))
 
-(use-package markdown-mode+
-  :ensure t)
+;; (use-package markdown-mode+
+;;   :ensure t)
 
 (use-package racket-mode
   :ensure t
