@@ -9,10 +9,10 @@
    (c-mode-common . google-make-newline-indent))
   :ensure t)
 
-(use-package flycheck
-  :config
-  (global-flycheck-mode t)
-  :ensure t)
+;; (use-package flycheck
+;;   :config
+;;   (global-flycheck-mode t)
+;;   :ensure t)
 
 (use-package lsp-clangd
   :demand t
