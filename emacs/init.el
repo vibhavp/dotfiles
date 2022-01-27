@@ -64,6 +64,7 @@
 (require 'config-magit)
 (require 'config-python)
 (require 'config-docker)
-
+(require 'config-bash)
+(require 'config-vterm)
 
 (setq gc-cons-threshold 100000000)
