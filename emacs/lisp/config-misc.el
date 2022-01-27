@@ -6,11 +6,13 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; set browser
-(setq browse-url-browser-function 'browse-url-chrome)
 
-(when (memq window-system '(mac ns))
-  (setq browse-url-chrome-program "open")
-  (setq browse-url-chrome-arguments '("-n" "-a" "Google Chrome" "--args")))
+(if (memq window-system '(mac ns))
+    (progn
+      (setq browse-url-browser-function 'browse-url-chrome)
+      (setq browse-url-chrome-program "open")
+      (setq browse-url-chrome-arguments '("-n" "-a" "Google Chrome" "--args")))
+  (setq browse-url-browser-function 'browse-url-xdg-open))
 
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
@@ -19,6 +21,7 @@
       kept-new-versions 6
       kept-old-versions 2
       backup-by-copying t)
+
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file)
 (setq initial-buffer-choice 'eshell)
@@ -140,11 +143,6 @@
   :commands (ix)
   :ensure t)
 
-(use-package vterm
-  :commands (vterm)
-  :ensure t
-  :custom  (vterm-install t))
-
 (use-package ack
   :ensure t
   :commands (ack))
@@ -169,6 +167,7 @@
 
 (use-package vc-hooks
   :config
+  (require 'tramp)
   (setq vc-ignore-dir-regexp
                 (format "\\(%s\\)\\|\\(%s\\)"
                         vc-ignore-dir-regexp
@@ -192,7 +191,5 @@
 
 (use-package clang-format+
     :ensure t)
-
-()
 
 (provide 'config-misc)
