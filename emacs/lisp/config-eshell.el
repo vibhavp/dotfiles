@@ -8,7 +8,7 @@
 					 "LIBRARY_PATH" "LD_LIBRARY_PATH")
 	exec-path-from-shell-shell-name "/bin/zsh")
   :config
-  (when (memq window-system '(mac ns x))
+  (when (memq window-system '(mac ns x pgtk))
     (exec-path-from-shell-initialize))
   :ensure t)
 
