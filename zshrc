@@ -14,6 +14,14 @@ promptinit
 # End of lines added by compinstall
 prompt fade red
 
-# added by travis gem
-[ -f /home/vibhavp/.travis/travis.sh ] && source /home/vibhavp/.travis/travis.sh
-source /usr/share/nvm/init-nvm.sh
+# [[ -s "/home/vibhavp/.gvm/scripts/gvm" ]] && source "/home/vibhavp/.gvm/scripts/gvm"
+
+if [[ "$INSIDE_EMACS" = 'vterm' ]] \
+    && [[ -n ${EMACS_VTERM_PATH} ]] \
+    && [[ -f ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh ]]; then
+	source ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh
+fi
+
+# Local Variables:
+# mode: sh
+# End:
