@@ -4,6 +4,11 @@
   :ensure t
   :init
   (setq lsp-enable-snippet nil
+	lsp-headerline-breadcrumb-enable t
+	lsp-modeline-code-actions-enable t
+	lsp-modeline-diagnostics-enable t
+	lsp-modeline-workspace-status-enable t
+	lsp-lens-enable t
 	lsp-auto-configure t
 	lsp-enable-text-document-color t
 	lsp-enable-indentation t
@@ -14,6 +19,7 @@
 	lsp-completion-enable t
 	lsp-completion-provider :none
 	lsp-diagnostics-provider :flymake
+	lsp-enable-dap-auto-configure nil
 	lsp-semantic-tokens-enable nil)
   :config
   (add-to-list 'lsp-disabled-clients 'ccls)
@@ -26,7 +32,6 @@
 
 (use-package lsp-diagnostics
   :hook ((lsp-configure . (lambda ()
-			    (flycheck-mode -1)
 			    (lsp-diagnostics-mode 1))))
   :load-path "~/src/lsp-mode/"
   :after lsp-mode)
