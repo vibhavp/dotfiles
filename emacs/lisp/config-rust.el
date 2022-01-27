@@ -18,4 +18,8 @@
   :ensure rust-mode
   :after (lsp-mode lsp-lens))
 
+(use-package cargo
+  :ensure cargo
+  :hook ((rust-mode . cargo-minor-mode)))
+
 (provide 'config-rust)
