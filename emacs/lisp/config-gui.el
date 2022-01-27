@@ -2,9 +2,9 @@
 
 ;; GUI stuff
 
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(menu-bar-mode -1)
+;; (tool-bar-mode -1)
+;; (scroll-bar-mode -1)
+;; (menu-bar-mode -1)
 (blink-cursor-mode 0)
 
 ;; (use-package mwheel
@@ -23,7 +23,7 @@
 (setq display-line-numbers t)
 
 ;;font
-(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-11"))
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
@@ -99,5 +99,7 @@
 (use-package git-gutter
   :ensure t
   :config
+  (advice-add 'git-gutter--turn-on :before-while (lambda () (not (file-remote-p default-directory))))
   (global-git-gutter-mode 1))
+
 (provide 'config-gui)
