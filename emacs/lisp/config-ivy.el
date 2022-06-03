@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package flx
-  :ensure t)
+  :ensure flx)
 
 (use-package ivy
   :bind (("C-c C-r" . ivy-resume))
