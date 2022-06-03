@@ -1,3 +1,5 @@
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 fpath+=~/.zfunc
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -14,12 +16,10 @@ promptinit
 # End of lines added by compinstall
 prompt fade red
 
-# [[ -s "/home/vibhavp/.gvm/scripts/gvm" ]] && source "/home/vibhavp/.gvm/scripts/gvm"
-
 if [[ "$INSIDE_EMACS" = 'vterm' ]] \
     && [[ -n ${EMACS_VTERM_PATH} ]] \
-    && [[ -f ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh ]]; then
-	source ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh
+    && [[ -f ${EMACS_VTERM_PATH}/etc/emacs-vterm-zsh.sh ]]; then
+	source ${EMACS_VTERM_PATH}/etc/emacs-vterm-zsh.sh
 fi
 
 # Local Variables:
