@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package lsp-bash
   :demand t
   :ensure lsp-mode
