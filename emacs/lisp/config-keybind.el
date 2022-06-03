@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (global-set-key (kbd "<f6>") 'compile)
 (global-set-key (kbd "<f8>") 'znc-all) (global-set-key (kbd "<f11>") 'tool-bar-mode)
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
