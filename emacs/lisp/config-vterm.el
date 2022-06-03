@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package eterm-256color
   :demand t
   :ensure t)

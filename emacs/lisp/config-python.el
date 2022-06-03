@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package lsp-pyls
   :hook (python-mode . lsp)
   :demand t
