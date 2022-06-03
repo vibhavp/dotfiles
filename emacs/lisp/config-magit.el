@@ -15,11 +15,18 @@
   :ensure t
   :after (magit))
 
-(use-package libgit
-  :ensure t)
-
 (use-package magit-libgit
   :ensure t)
+
+;; (use-package blamer
+;;   :ensure t
+;;   :load-path "~/src/blamer.el"
+;;   :custom
+;;   (blamer-idle-time 0.3)
+;;   (blamer-min-offset 70)
+;;   :config
+;;   (require 'blamer-libgit)
+;;   (global-blamer-mode 1))
 
 ;; (Add-Hook 'after-init-hook 'magit-todos-mode)
 
