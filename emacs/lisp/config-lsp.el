@@ -2,6 +2,7 @@
 
 (use-package lsp-mode
   :ensure t
+  :demand t
   :init
   (setq lsp-enable-snippet nil
 	lsp-headerline-breadcrumb-enable t
@@ -24,7 +25,9 @@
   :config
   (add-to-list 'lsp-disabled-clients 'ccls)
   (add-to-list 'lsp-disabled-clients 'jsts-ls)
-  :load-path "~/src/lsp-mode/")
+  :hook
+  ((lsp-before-open . hack-local-variables))
+  :after (exec-path-from-shell))
 
 (use-package lsp-completion
   :hook (lsp-configure . lsp-completion--enable)
@@ -42,6 +45,7 @@
 
 (use-package lsp-lens
   :ensure lsp-mode
+  :demand t
   :after lsp-mode)
 
 (provide 'config-lsp)
