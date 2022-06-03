@@ -102,4 +102,8 @@
   (advice-add 'git-gutter--turn-on :before-while (lambda () (not (file-remote-p default-directory))))
   (global-git-gutter-mode 1))
 
+(use-package display-line-numbers
+  :demand t
+  :hook ((after-init . global-display-line-numbers-mode)))
+
 (provide 'config-gui)
