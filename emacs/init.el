@@ -1,5 +1,8 @@
 ;; (setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10")
 
+(setq emacs-memory-ballast (make-vector 50000000 0))
+(setq gc-cons-threshold most-positive-fixnum)
+
 (advice-add 'libgit-load :before
 	    (lambda () (setq libgit--module-file
 			     (expand-file-name
@@ -9,13 +12,14 @@
 						   module-file-suffix))
 			      libgit--build-dir))))
 
-(setq gc-cons-threshold most-positive-fixnum)
-
-(require 'comp nil t)
-(setq  comp-deferred-compilation t)
+ (require 'comp nil t)
+ (setq native-comp-deferred-compilation t
+       package-native-compile t
+       native-comp-compiler-options `("-frecord-gcc-switches"
+ 				     "-mtune=native"
+ 				     "-march=skylake"))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
@@ -66,5 +70,6 @@
 (require 'config-docker)
 (require 'config-bash)
 (require 'config-vterm)
+(require 'config-tree-sitter)
 
 (setq gc-cons-threshold 100000000)
