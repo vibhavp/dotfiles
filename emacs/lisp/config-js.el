@@ -36,9 +36,10 @@
 		  '(:system lsp-clients-typescript-tls-path))
   (lsp-dependency 'typescript
                   `(:system ,(f-join (map-nested-elt
-				      (json-parse-string
-				       (shell-command-to-string "npm ll -g typescript --json"))
-				      '("dependencies" "typescript" "path"))
+				      (with-temp-buffer
+					(call-process "npm" nil t nil "ll" "-g" "tsc" "--json")
+					(json-parse-string (buffer-substring (point-min) (point-max))))
+				      '("dependencies" "tsc" "path"))
 				     "lib")))
   :after (lsp-mode typescript-mode))
 
