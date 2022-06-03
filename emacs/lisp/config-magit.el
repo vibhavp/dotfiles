@@ -1,14 +1,11 @@
-;; (use-package magit-todos
-;;   :ensure t)
+;; -*- lexical-binding: t; -*-
 
-;; (magit-todos-mode 1)
+(use-package libgit
+  :ensure t)
 
 (use-package magit
   :commands (magit magit-status magit-diff magit-checkout)
-  :ensure t
-  :demand t
-  ;; :after magit-todos
-  )
+  :after (libgit))
 
 (use-package magit-delta
   :ensure t
