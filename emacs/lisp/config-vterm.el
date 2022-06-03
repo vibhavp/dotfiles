@@ -9,4 +9,9 @@
   (setq vterm-term-environment-variable "eterm-color")
   :custom (vterm-install t))
 
+(use-package multi-vterm
+  :ensure t)
+
+;; (setq initial-buffer-choice #'multi-vterm-next)
+
 (provide 'config-vterm)
