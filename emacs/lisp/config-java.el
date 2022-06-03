@@ -4,7 +4,7 @@
   :ensure t
   :after lsp)
 
-(use-package java-mode
+(use-package cc-mode
   :after lsp-java
   :hook ((java-mode . lsp)))
 
