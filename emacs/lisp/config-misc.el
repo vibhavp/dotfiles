@@ -24,10 +24,14 @@
 
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file)
-(setq initial-buffer-choice 'eshell)
 
 (use-package undo-tree
   :functions (undo-tree-visualize global-undo-tree-mode)
+  :init
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))
+	undo-tree-visualizer-diff nil
+	undo-tree-visualizer-timestamps t
+	undo-tree-enable-undo-in-region t)
   :config
   (global-undo-tree-mode 1)
   :ensure t)
@@ -61,17 +65,17 @@
 
 
 ;; (add-hook 'kill-emacs-hook #'(lambda ()
-;; 			       (find-file "~/.emacs.d/packages.el")
-;; 			       (goto-char (point-min))
-;; 			       (erase-buffer)
-;; 			       (insert (format "%s" package-activated-list))
-;; 			       (save-buffer)))
+;;			       (find-file "~/.emacs.d/packages.el")
+;;			       (goto-char (point-min))
+;;			       (erase-buffer)
+;;			       (insert (format "%s" package-activated-list))
+;;			       (save-buffer)))
 
 (setq load-prefer-newer t)
 (use-package saveplace
   :config
   (save-place-mode 1)
-  :defer t)
+  :demand t)
 
 (use-package proced
   :commands proced
@@ -92,7 +96,7 @@
   :hook
   ((prog-mode . turn-on-smartparens-strict-mode)
    (markdown-mode . turn-on-smartparens-strict-mode))
-  :bind ("C-c DEL" . sp-delete-region))
+  :bind ("C-c d" . sp-delete-region))
 
 (setq large-file-warning-threshold 50000000)
 (setq indent-tabs-mode nil)
@@ -121,7 +125,8 @@
 
 (use-package with-editor
   :ensure t
-  :hook ((shell-mode term-exec-hook eshell-mode-hook) .
+  :demand t
+  :hook ((shell-mode term-exec eshell-mode vterm-mode) .
 	 with-editor-export-editor))
 
 ;; (use-package markdown-mode+
@@ -135,9 +140,9 @@
   :ensure t
   :commands (restart-emacs))
 
-(use-package google-translate
-  :defer t
-  :ensure t)
+;; (use-package google-translate
+;;   :defer t
+;;   :ensure t)
 
 (use-package ix
   :commands (ix)
@@ -169,9 +174,9 @@
   :config
   (require 'tramp)
   (setq vc-ignore-dir-regexp
-                (format "\\(%s\\)\\|\\(%s\\)"
-                        vc-ignore-dir-regexp
-                        tramp-file-name-regexp))
+		(format "\\(%s\\)\\|\\(%s\\)"
+			vc-ignore-dir-regexp
+			tramp-file-name-regexp))
   :demand t)
 
 (use-package json-navigator
@@ -190,6 +195,27 @@
     :defer t)
 
 (use-package clang-format+
-    :ensure t)
+  :ensure t)
+
+(use-package exec-path-from-shell
+  :init
+  (setq exec-path-from-shell-arguments '("-l")
+	exec-path-from-shell-shell-name "/bin/zsh")
+  :config
+  (when (memq window-system '(mac ns x pgtk))
+    (dolist (var '("LANG" "LC_CTYPE" "LC_ALL" "GOAMD64"
+		 "GO111MODULE" "GOPRIVATE" "GOPROXY" "GONOSUMDB" "CASK_EMACS"
+		 "LIBRARY_PATH" "LD_LIBRARY_PATH" "SSH_AUTH_SOCK" "SSH_AGENT_PID"
+		 "GPG_AGENT_INFO" "KUBECONFIG" "GVM_ROOT" "VDPAU_DRIVER" "XDG_SESSION_TYPE" "XDG_RUNTIME_DIR" "XDG_DATA_DIRS" "XDG_SESSION_DESKTOP" "XDG_CURRENT_DESKTOP" "XDG_SESSION_CLASS" "DEBUG_SESSION_BUS_ADDRESS" "WAYLAND_DISPLAY" "XAUTHORITY"))
+      (add-to-list 'exec-path-from-shell-variables var))
+
+    (exec-path-from-shell-initialize))
+  :ensure t
+  :demand t
+  :after with-editor)
+
+(use-package f
+  :ensure t
+  :demand t)
 
 (provide 'config-misc)
