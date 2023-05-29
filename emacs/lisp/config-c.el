@@ -1,27 +1,23 @@
 ;; -*- lexical-binding: t; -*-
 
-;;Everything related to C
-
-(use-package google-c-style
-  :demand t)
-
-;; (use-package flycheck
-;;   :config
-;;   (global-flycheck-mode t)
-;;   :ensure t)
+;; Everything related to C
 
 (use-package lsp-clangd
-  :demand t
-  :after lsp-mode
+  :after (lsp-mode cc-mode)
   :ensure lsp-mode
-  :hook (((c-mode c++-mode objc-mode) . lsp)
+  :hook (((c-mode c++-mode objc-mode) . lsp-deferred)
 	 ((c-mode-common objc-mode) .
 	  (lambda ()
-	    (remove-hook 'flymake-diagnostic-functions 'flymake-cc t)
-	    (add-hook 'before-save-hook #'delete-trailing-whitespace 0 t)))
-	 ((flymake-mode) .
-	  (lambda ()
-	    (setq-local flymake-proc-allowed-file-name-masks nil)))))
+	    (electric-indent-local-mode -1)
+	    (remove-hook 'flymake-diagnostic-functions 'flymake-cc t)))))
+
+(use-package c-ts-mode
+  :if (treesit-available-p)
+  :init
+  (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
+  (add-to-list 'lsp-language-id-configuration '(c-ts-mode . "c"))
+  (add-to-list 'lsp-language-id-configuration '(c++-ts-mode . "cpp"))
+  :hook (((c-ts-base-mode) . lsp-deferred)))
 
 ;; (use-package ccls
 ;;   :demand t
