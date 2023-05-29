@@ -14,7 +14,6 @@
 
 (use-package dired-async
   :after dired
-  :defer t
   :config
   (dired-async-mode)
   :ensure async)
@@ -29,7 +28,12 @@
 
 (use-package dired-du
   :ensure t
-  :config
+  :init
   (setq dired-du-size-format t))
+
+(use-package dired-quick-sort
+  :ensure t
+  :config
+  (dired-quick-sort-setup))
 
 (provide 'config-dired)
