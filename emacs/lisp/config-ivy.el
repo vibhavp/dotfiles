@@ -1,6 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package flx
+  :hook ((minibuffer-setup . (lambda ()
+			       (setq gc-cons-percentage 1.0)))
+	 (minibuffer-exit . (lambda ()
+			      (setq gc-cons-percentage config--gc-cons-percentage))))
   :ensure flx)
 
 (use-package ivy
@@ -33,12 +37,14 @@
 
 (use-package ivy-rich
   :init
-  (setq ivy-format-function #'ivy-format-function-line)
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
   :config (ivy-rich-mode 1)
+  :after (ivy)
   :ensure t)
 
 (use-package all-the-icons-ivy
   :ensure t
-  :config (all-the-icons-ivy-setup))
+  :config (all-the-icons-ivy-setup)
+  :functions (all-the-icons-ivy-setup))
 
 (provide 'config-ivy)

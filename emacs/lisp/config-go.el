@@ -18,12 +18,13 @@
   (lsp-register-custom-settings
    '(("gopls.completeUnimported" t t)
      ("gopls.staticcheck" t t)))
-  (map-put! lsp-go-codelenses 'gc_details t)
+  (setq lsp-go-codelenses (map-insert lsp-go-codelenses 'gc_details t))
   :ensure lsp-mode
   :init
   (setq lsp-go-library-directories
 	(list (f-join (string-trim (shell-command-to-string "go env GOROOT")) "src")))
   (add-to-list 'safe-local-variable-values '(lsp-go-build-flags . ["-tags=freebsd"]))
+  (add-to-list 'safe-local-variable-values '(lsp-go-build-flags . ["-tags=wireinject"]))
   :after (lsp-mode lsp-lens))
 
 ;; (use-package go-dlv

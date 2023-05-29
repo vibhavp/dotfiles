@@ -25,8 +25,13 @@
   :config
   (add-to-list 'lsp-disabled-clients 'ccls)
   (add-to-list 'lsp-disabled-clients 'jsts-ls)
+  (advice-add 'lsp--create-initialization-options
+	      :before (lambda (&rest _r)
+			(hack-local-variables)))
   :hook
-  ((lsp-before-open . hack-local-variables))
+  ((lsp-before-open . hack-local-variables)
+   (lsp-mode . (lambda ()
+		 (setq-local add-log-current-defun-function (lambda () nil)))))
   :after (exec-path-from-shell))
 
 (use-package lsp-completion
@@ -36,7 +41,6 @@
 (use-package lsp-diagnostics
   :hook ((lsp-configure . (lambda ()
 			    (lsp-diagnostics-mode 1))))
-  :load-path "~/src/lsp-mode/"
   :after lsp-mode)
 
 (use-package lsp-treemacs

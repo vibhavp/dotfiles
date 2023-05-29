@@ -9,11 +9,19 @@
 
 (if (memq window-system '(mac ns))
     (progn
-      (setq browse-url-browser-function 'browse-url-chrome)
-      (setq browse-url-chrome-program "open")
-      (setq browse-url-chrome-arguments '("-n" "-a" "Google Chrome" "--args")))
-  (setq browse-url-browser-function 'browse-url-xdg-open))
+      (use-package browse-url
+	:init
+	(setq browse-url-browser-function 'browse-url-chrome)
+	(setq browse-url-chrome-program "open")
+	(setq browse-url-chrome-arguments '("-n" "-a" "Google Chrome" "--args"))))
+  (use-package browse-url
+    :init
+    (setq browse-url-browser-function 'browse-url-xdg-open)))
 
+(use-package envrc
+  :ensure t
+  :config
+  (envrc-global-mode))
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
       version-control t
@@ -21,9 +29,6 @@
       kept-new-versions 6
       kept-old-versions 2
       backup-by-copying t)
-
-(setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
-(load custom-file)
 
 (use-package undo-tree
   :functions (undo-tree-visualize global-undo-tree-mode)
@@ -53,11 +58,11 @@
   (editorconfig-mode 1)
   :ensure t)
 
-(use-package keyfreq
-  :config
-  (keyfreq-mode 1)
-  (keyfreq-autosave-mode 1)
-  :ensure t)
+;; (use-package keyfreq
+;;   :config
+;;   (keyfreq-mode 1)
+;;   (keyfreq-autosave-mode 1)
+;;   :ensure t)
 
 ;; (setq python-shell-interpreter "ipython"
 ;;       python-shell-interpreter-args "-i"
@@ -87,8 +92,13 @@
   :init
   (setq auth-sources '("~/.authinfo.gpg")))
 
+(use-package package-lint
+  :ensure t
+  :commands (package-lint-current-buffer package-lint-buffer))
+
 (use-package smartparens-config
-  :ensure smartparens
+  :load-path "~/src/smartparens"
+  ;; :ensure smartparens
   :config
   (show-smartparens-global-mode t)
   (sp-use-paredit-bindings)
@@ -170,15 +180,6 @@
       default-directory "~/"
       read-process-output-max (* 1024 1024))
 
-(use-package vc-hooks
-  :config
-  (require 'tramp)
-  (setq vc-ignore-dir-regexp
-		(format "\\(%s\\)\\|\\(%s\\)"
-			vc-ignore-dir-regexp
-			tramp-file-name-regexp))
-  :demand t)
-
 (use-package json-navigator
   :commands (json-navigator-navigate-region json-navigator-navigate-after-point)
   :ensure t)
@@ -196,6 +197,10 @@
 
 (use-package clang-format+
   :ensure t)
+
+(use-package comp
+  :init
+  (setq native-comp-async-report-warnings-errors 'silent))
 
 (use-package exec-path-from-shell
   :init
@@ -217,5 +222,22 @@
 (use-package f
   :ensure t
   :demand t)
+
+(when (eq system-type 'gnu/linux)
+  (use-package auth-source
+    :demand t)
+  (use-package secrets
+    :demand t
+    :after auth-source
+    :init
+    (setq auth-sources '(default "secrets:Login" "secrets:session"))))
+
+(use-package hcl-mode
+  :ensure t)
+
+(use-package async-bytecomp
+  :ensure async
+  :init
+  (setq async-bytecomp-allowed-packages '(all)))
 
 (provide 'config-misc)

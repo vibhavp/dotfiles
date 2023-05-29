@@ -23,24 +23,12 @@
   :ensure t)
 
 (use-package lsp-javascript
-  :demand t
   :hook ((js-mode . lsp)
 	 (typescript-mode . lsp))
   :ensure lsp-mode
   :init
-  (setq lsp-clients-typescript-tls-path (expand-file-name "~/bin/lsp-tsls"))
   (setq lsp-clients-typescript-init-opts `(:includeCompletionsForImportStatements
 						    ,(lsp-json-bool t)))
-  :config
-  (lsp-dependency 'typescript-language-server
-		  '(:system lsp-clients-typescript-tls-path))
-  (lsp-dependency 'typescript
-                  `(:system ,(f-join (map-nested-elt
-				      (with-temp-buffer
-					(call-process "npm" nil t nil "ll" "-g" "tsc" "--json")
-					(json-parse-string (buffer-substring (point-min) (point-max))))
-				      '("dependencies" "tsc" "path"))
-				     "lib")))
   :after (lsp-mode typescript-mode))
 
 (use-package lsp-eslint

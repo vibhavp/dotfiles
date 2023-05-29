@@ -5,7 +5,7 @@
 ;; (tool-bar-mode -1)
 ;; (scroll-bar-mode -1)
 ;; (menu-bar-mode -1)
-(blink-cursor-mode 0)
+(blink-cursor-mode 1)
 
 ;; (use-package mwheel
 ;;   :init
@@ -21,9 +21,11 @@
   :config (column-number-mode))
 
 (setq display-line-numbers t)
+(pixel-scroll-precision-mode 1)
 
 ;;font
 (add-to-list 'default-frame-alist '(font . "Inconsolata-11"))
+(set-face-attribute 'default t :font "Inconsolata-11")
 ;; Why not?
 ;;(add-to-list 'default-frame-alist '(font . "Comic Sans MS-9"))
 
@@ -80,30 +82,49 @@
 
 (windmove-default-keybindings 'shift)
 
-(use-package emojify
-  :ensure t
-  :init
-  (setq emojify-emoji-styles '(unicode))
-  (add-hook 'after-init-hook #'global-emojify-mode)
-  :defer t)
+;; (use-package emojify
+;;   :ensure t
+;;   :init
+;;   (setq emojify-emoji-styles '(unicode))
+;;   (add-hook 'after-init-hook #'global-emojify-mode)
+;;   :defer t)
 
 (use-package highlight-indentation
   :ensure t
   :defer t)
 
-(when (featurep 'tab-bar)
-  (use-package tab-bar
-    :config
-    (tab-bar-mode)))
+;; (when (featurep 'tab-bar)
+;;   (use-package centaur-tabs
+;;     :demand t
+;;     :ensure t
+;;     :config
+;;     (centaur-tabs-mode t)
+;;     :init
+;;     (setq centaur-tabs-set-icons t
+;; 	  centaur-tabs-gray-out-icons 'buffer
+;; 	  centaur-tabs-set-bar 'under
+;; 	  centaur-tabs-label-fixed-length 15)))
 
 (use-package git-gutter
   :ensure t
   :config
-  (advice-add 'git-gutter--turn-on :before-while (lambda () (not (file-remote-p default-directory))))
+  (advice-add 'git-gutter--turn-on :before-while
+	      (lambda () (not (file-remote-p default-directory))))
   (global-git-gutter-mode 1))
 
 (use-package display-line-numbers
   :demand t
   :hook ((after-init . global-display-line-numbers-mode)))
+
+;; (use-package unicode-fonts
+;;   :ensure t
+;;   :demand t
+;;   :config
+;;   (unicode-fonts-setup)
+;;   (setf (alist-get "Emoticons" unicode-fonts-block-font-mapping nil nil #'equal)
+;; 	'("Noto Color Emoji")))
+
+(use-package ligature
+  :ensure t)
 
 (provide 'config-gui)

@@ -1,35 +1,24 @@
 ;; (setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10")
+;; (profiler-start 'cpu)
+(require 'comp)
+(defvar native-comp-deferred-compilation-deny-list native-comp-jit-compilation-deny-list)
+(defvar bootstrap-version)
 
-(setq emacs-memory-ballast (make-vector 50000000 0))
-(setq gc-cons-threshold most-positive-fixnum)
-
-(advice-add 'libgit-load :before
-	    (lambda () (setq libgit--module-file
-			     (expand-file-name
-			      (concat "libegit2" (if (and (string-equal system-type "darwin")
-							  (> emacs-major-version 27))
-						     ".so"
-						   module-file-suffix))
-			      libgit--build-dir))))
-
- (require 'comp nil t)
- (setq native-comp-deferred-compilation t
-       package-native-compile t
+(setq  package-native-compile t
        native-comp-compiler-options `("-frecord-gcc-switches"
  				     "-mtune=native"
  				     "-march=skylake"))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
+(when (< emacs-major-version 27)
+  (package-initialize))
 
-;; (let ((default-directory "~/.emacs.d/lisp/"))
-;;   (normal-top-level-add-subdirs-to-load-path))
+(setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
+(load custom-file)
 
-(eval-when-compile
-  (require 'use-package))
+(eval-when-compile (require 'use-package))
 
 (setq use-package-compute-statistics t)
 
@@ -39,37 +28,44 @@
 ;;   ;; To disable collection of benchmark data after init is done.
 ;;   (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
-(require 'bind-key)
+(defvar config--gc-cons-percentage 0.3
+  "Configured value for gc-cons-percentage")
+(setq gc-cons-percentage config--gc-cons-percentage)
 
-(require 'config-misc)
-(require 'config-functions)
-(require 'config-gui)
-(require 'config-keybind)
-(require 'config-latex)
-(require 'config-lisp)
-(require 'config-ivy)
-(require 'config-skeleton)
-(require 'config-variables)
-(require 'config-eshell)
-(require 'config-dired)
-(require 'config-ispell)
-(require 'config-irc)
-(require 'config-elfeed)
-(require 'config-go)
-(require 'config-rust)
-(require 'config-webdev)
-(require 'config-js)
-(require 'config-lsp)
-(require 'config-c)
-(require 'config-yaml)
-(require 'config-kotlin)
-(require 'config-java)
-(require 'config-org)
-(require 'config-magit)
-(require 'config-python)
-(require 'config-docker)
-(require 'config-bash)
-(require 'config-vterm)
-(require 'config-tree-sitter)
-
-(setq gc-cons-threshold 100000000)
+(let ((gc-cons-percentage 1.0))
+  (require 'bind-key)
+  (require 'config-misc)
+  (require 'config-functions)
+  (require 'config-gui)
+  (require 'config-keybind)
+  (require 'config-latex)
+  (require 'config-lisp)
+  (require 'config-helm)
+  (require 'config-skeleton)
+  (require 'config-variables)
+  (require 'config-eshell)
+  (require 'config-dired)
+  (require 'config-ispell)
+  (require 'config-irc)
+  (require 'config-elfeed)
+  (require 'config-go)
+  (require 'config-rust)
+  (require 'config-webdev)
+  (require 'config-js)
+  (require 'config-lsp)
+  (require 'config-c)
+  (require 'config-yaml)
+  (require 'config-kotlin)
+  (require 'config-java)
+  (require 'config-org)
+  (require 'config-magit)
+  (require 'config-python)
+  (require 'config-docker)
+  (require 'config-bash)
+  (require 'config-vterm)
+  (require 'config-tree-sitter)
+  (require 'config-flymake)
+  (require 'config-gud)
+  (require 'config-llvm)
+  (require 'config-tramp))
+(garbage-collect)
