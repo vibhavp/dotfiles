@@ -1,15 +1,16 @@
 ;; (setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10")
 ;; (profiler-start 'cpu)
 (require 'comp)
-(defvar native-comp-deferred-compilation-deny-list native-comp-jit-compilation-deny-list)
+;; (defvar native-comp-deferred-compilation-deny-list native-comp-jit-compilation-deny-list)
 (defvar bootstrap-version)
 
 (setq  package-native-compile t
        native-comp-compiler-options `("-frecord-gcc-switches"
  				     "-mtune=native"
- 				     "-march=skylake"))
+ 				     "-march=alderlake"))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
 (when (< emacs-major-version 27)
